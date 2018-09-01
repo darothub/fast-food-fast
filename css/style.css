@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+}
+
+.navbar ul{
+    
+    font-size: 14px;
+}
+
+.navbar ul li{
+   display: inline-block;
+}
+
+.navbar ul li a{
+    color: white;
+ }
+
+ #arrow{
+     font-weight: 50px;
+     font-size: 40px;
+     float: right;
+     line-height: .8em;
+     cursor: pointer;
+ }
+
+#signup{
+    line-height: 3em;
+}
+
+#sidebar{
+    width:50%;
+    height:120px;
+    background-color: yellow;
+    float: right;
+    position: absolute;
+    top:7%;
+    right: 0%;
+    display: none;
+    z-index: 11;
+}
+#sidebardiv{
+    margin: 10px auto;
+    text-align: center;
+    line-height: 2em;
+}
+#signin, #contact{
+    display: block;
+    font-size: 14px;
+}
+
+#signupform{
+    width: 350px;
+    height:400px;
+    background-color:grey;
+    float:right;
+    margin-right:50px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+#signupform .wrapper{
+    width: 80%;
+    height:90%;
+    margin: 20px auto;
+    
+}
+.wrapper input{
+    width:100%;
+    height:50px;
+    margin: 20px auto;
+}
+
+.btn{
+    width:100px;
+    height: 30px;
+    padding: 10px;
+    background-color: purple;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 2em;
+    font-weight:30px;
+    
+}
+
+.btn a{
+    display: block;
+}
+
+.btn:hover, .btn a:hover{
+    background-color: green;
+    color: white;
+}
+
+.content{
+    width:100%;
+    height: 300px;
+    background-color: yellow;
+    position: fixed;
+    z-index: 10;
+}
+
+.content div{
+    width:60%;
+    margin: 0 auto;
+    
+}
+img{
+    width:200px;
+    height: 160px;
+    margin: 0 auto;
+}
+
+.content div p{
+    margin-top: 20px;
+    font-size:24px;
+    text-align: center;
+    font-weight:bold;
+}
