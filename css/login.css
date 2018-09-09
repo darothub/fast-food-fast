@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bigwrapper{
+    display: grid;
+    width:100%;
+    height: 650px;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav"
+                         "signup"
+                         "footer";
+
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}
+
+.navsetting{
+    grid-area: nav;
+}
+
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+}
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+}
+
+.navbar ul{
+    
+    font-size: 14px;
+}
+
+.navbar ul li{
+   display: inline-block;
+}
+
+.navbar ul li a{
+    color: white;
+ }
+
+ #arrow{
+     font-weight: 50px;
+     font-size: 40px;
+     float: right;
+     line-height: .8em;
+     cursor: pointer;
+ }
+ #signup{
+    line-height: 3em;
+}
+
+#signin{
+    line-height: 3em;
+}
+
+#home{
+    line-height: 3em;
+}
+
+#sidebar{
+    width:15%;
+    height:135px;
+    background-color:#FFF799;
+    float: right;
+    position: absolute;
+    top:6%;
+    right: 0%;
+    display: none;
+    z-index: 11;
+}
+#sidebardiv{
+    margin: 10px auto;
+    text-align: center;
+    line-height: 2em;
+}
+.sidebaroptions{
+    display: block;
+    font-size: 14px;
+}
+
+.signupform{
+    grid-area: signup;
+    width: 350px;
+    height:400px;
+    background-color:white;
+    margin: 0 auto;
+    border-radius: 5px;
+    
+}
+
+.signupform .wrapper{
+    width: 80%;
+    height:90%;
+    margin: 20px auto;
+    
+}
+.wrapper input{
+    width:100%;
+    height:50px;
+    margin: 20px auto;
+}
+
+.btn{
+    width:100px;
+    height: 30px;
+    padding: 10px;
+    background-color: purple;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 2em;
+    font-weight:30px;
+    
+}
+
+.btn a{
+    display: block;
+    color: white;
+}
+
+.btn:hover, .btn a:hover{
+    background-color: green;
+    color: white;
+}
+
+footer{
+    grid-area: footer;
+    width: 100%;
+    height: 70px;
+    color: white;
+    margin-bottom: -190px;
+    background-color: red;
+    text-align: center;
+    line-height: 4em;
+}
+
+@media only screen and (max-width:641px){
+   
+    #sidebar{
+        width:40%;
+        height: 180px;
+        
+    }
+
+    #signin{
+        line-height: 3em;
+        display: none;
+    }
+
+    .signupform{
+        
+        width: 250px;
+        height:400px;
+        
+        
+    }
+    
+    
+
+}
+
+@media only screen and (min-width:642px){
+    .bigwrapper{
+        display: grid;
+        width:100%;
+        height: 700px;
+        
+    
+    }
+    #sidebar{
+        width:40%;
+        
+    }
+
+    #signin, #signup, #signin2{
+        line-height: 3em;
+        display: none;
+    }
+
+    footer{
+        
+        height: 85px;
+        
+        
+    }
+  
+
+}

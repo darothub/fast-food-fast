@@ -71,12 +71,12 @@ ul{
 }
 
 #sidebar{
-    width:50%;
+    width:15%;
     height:120px;
     background-color:#FFF799;
     float: right;
     position: absolute;
-    top:6.5%;
+    top:6%;
     right: 0%;
     display: none;
     z-index: 11;
@@ -245,10 +245,7 @@ img{
     margin-bottom: 20px;
 }
 
-#orderstep #quikcall img{
-  margin-left: 100px;
 
-}
 
 #orderstep span img{
     margin-top: -15px;
@@ -276,6 +273,15 @@ footer{
         line-height: 3em;
         display: none;
     }
+
+    #sidebar{
+        width:40%;
+        
+    }
+    #home{
+        line-height: 3em;
+        display: none;
+    }
     #orderstep span img{
         width:150px;
     
@@ -297,9 +303,17 @@ footer{
         display: none;
     }
 
+  
+
+    #home{
+        line-height: 3em;
+        display: none;
+    }
+
     .banner{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        height: 480px;
         
     }
 
@@ -363,8 +377,9 @@ footer{
     }
     .banner div p{
         margin-top: 20px;
-        font-size:45px;
+        font-size:38px;
         color:white;
+        text-shadow: #000 0px 3px 4px;
     }
 
     .displayFood{
