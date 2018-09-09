@@ -21,6 +21,9 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
+ul{
+    list-style-type: none;
+}
 
 .navsetting{
     grid-area: nav;
@@ -189,7 +192,7 @@ img{
     width:100%;
     height: 400px;
     background-color: white;
-    margin: 20px auto 490px auto;
+    margin: 450px auto 490px auto;
 }
 
 .displayFood #fooditems{
@@ -266,6 +269,10 @@ footer{
         line-height: 3em;
         display: none;
     }
+    #orderstep span img{
+        width:150px;
+    
+    }
 }
 
 @media only screen and (min-width:642px){
@@ -333,5 +340,66 @@ footer{
         grid-template-columns: 1fr 1fr;
         
     }
-    
+    .displayFood #fooditems img{
+       width: 300px;
+       height:200px;
+        
+    }
+}
+
+@media only screen and (min-width:968px){
+    .banner{
+        height: 570px;
+        background-image: url("../images/food1.jpg");
+        background-repeat: no-repeat;
+        background-size: 1500px 600px;
+    }
+    .banner div p{
+        margin-top: 20px;
+        font-size:45px;
+        color:white;
+    }
+
+    .displayFood{
+        grid-area: display;
+        width:100%;
+        height: 1150px;
+        
+    }
+
+    .displayFood #fooditems img{
+        width: 500px;
+        height:300px;
+         
+     }
+
+     .orderstep{
+        
+        width: 100%;
+        height: 500px;
+        margin: 10px auto;
+        margin-bottom: 0px;
+        background-color: #FFF799;
+    }
+
+     .orderstep #orderstep{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width:100%;
+
+    }
+    .orderstep #orderstep #orderhead{
+        grid-column: 1/4;
+    }
+    .orderstep #orderstep h2{
+        grid-column: 1/4;
+        margin-top:80px;
+        margin-bottom: 30px;
+    }
+
+    .signupform{
+       margin-left:150px;
+       margin-bottom:-90px;
+        
+    }
 }
