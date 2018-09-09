@@ -4,11 +4,33 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+.bigwrapper{
+    display: grid;
+    width:100%;
+    height: 800px;;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav nav"
+                         "banner signup"
+                         "display display"
+                         "orderstep orderstep"
+                         "footer footer";
+
+}
+
 a{
     text-decoration: none;
     cursor: pointer;
 }
 
+.navsetting{
+    grid-area: nav;
+}
+
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+}
 .navbar{
     width: 100%;
     height: 40px;
@@ -36,17 +58,22 @@ a{
      cursor: pointer;
  }
 
+ 
 #signup{
+    line-height: 3em;
+}
+
+#signin{
     line-height: 3em;
 }
 
 #sidebar{
     width:50%;
     height:120px;
-    background-color: yellow;
+    background-color:#FFF799;
     float: right;
     position: absolute;
-    top:7%;
+    top:6.5%;
     right: 0%;
     display: none;
     z-index: 11;
@@ -56,23 +83,25 @@ a{
     text-align: center;
     line-height: 2em;
 }
-#signin, #contact{
+.sidebaroptions{
     display: block;
     font-size: 14px;
 }
 
-#signupform{
+.signupform{
+    grid-area: signup;
+    grid-column: 2/3;
     width: 350px;
     height:400px;
     background-color:grey;
     float:right;
-    margin-right:50px;
-    margin-top: 20px;
+    margin-right:0px;
+    margin-top: 0px;
     border-radius: 5px;
-    display: none;
+    
 }
 
-#signupform .wrapper{
+.signupform .wrapper{
     width: 80%;
     height:90%;
     margin: 20px auto;
@@ -98,23 +127,28 @@ a{
 
 .btn a{
     display: block;
+    color: white;
 }
 
 .btn:hover, .btn a:hover{
     background-color: green;
     color: white;
 }
-
-.content{
+.banner{
+    grid-area: banner;
+    grid-column: 1/3;
+    grid-row: 3;
     width:100%;
-    height: 300px;
-    background-color: yellow;
-    position: fixed;
+    height: 430px;
+    background-color: #FFF799;
+    position: relative;
     z-index: 10;
 }
 
-.content div{
+.banner #image{
+    display: grid;
     width:60%;
+    position: relative;
     margin: 0 auto;
     
 }
@@ -124,9 +158,180 @@ img{
     margin: 0 auto;
 }
 
-.content div p{
+.banner div p{
     margin-top: 20px;
     font-size:24px;
     text-align: center;
     font-weight:bold;
+}
+
+#order{
+    background-color: red;
+    margin-top: 30px;
+    width:200px;
+    height: 50px;
+}
+
+#orderLink{
+    line-height: 2.5em;
+    color: #FFF799;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#order:hover, #order a:hover{
+    background-color: #F19A82;
+    color: white;
+}
+
+.displayFood{
+    grid-area: display;
+    width:100%;
+    height: 400px;
+    background-color: white;
+    margin: 20px auto 490px auto;
+}
+
+.displayFood #fooditems{
+    display: grid;
+    width:100%;
+    margin: 10px auto;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#fooditems span{
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.orderstep{
+    grid-area: orderstep;
+    width: 100%;
+    height: 700px;
+    margin: 10px auto;
+    margin-bottom: 0px;
+    background-color: #FFF799;
+}
+
+.orderstep #orderstep{
+    display: grid;
+    grid-template-columns: 1fr;
+    width:100%;
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#orderstep #orderhead{
+    width: 100%;
+    height:50px;
+    line-height: 3em;
+    background-color: red;
+    margin-top: 0px;
+}
+
+#orderstep span{
+    display: grid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#orderstep span img{
+    margin-top: -15px;
+    margin-bottom: 15px;
+
+}
+
+
+footer{
+    grid-area: footer;
+    width: 100%;
+    height: 80px;
+    margin-bottom: -150px;
+    background-color: red;
+    text-align: center;
+    line-height: 5em;
+}
+
+@media only screen and (max-width:641px){
+    .signupform{
+        display:none;
+        
+    }
+    #signin{
+        line-height: 3em;
+        display: none;
+    }
+}
+
+@media only screen and (min-width:642px){
+    .bigwrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "nav nav"
+                            "signup signup"
+                            "banner banner"
+                            "display display"
+                            "orderstep orderstep"
+                            "footer footer";
+
+    }
+    #signup{
+        display: none;
+    }
+
+    .banner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+
+    .banner #image{
+        display: grid;
+        width:60%;
+        position: relative;
+        margin: 35px auto;
+        
+    }
+    img{
+        width:200px;
+        height: 160px;
+        margin: 0 auto;
+    }
+    
+    .banner div p{
+        margin-top: 20px;
+        font-size:24px;
+        text-align: center;
+        font-weight:bold;
+    }
+    #order{
+        grid-row:2;
+        margin-top: 0px;
+    }
+    .signupform{
+        
+        margin-top: -330px;
+       
+        
+    }
+    .displayFood{
+        grid-area: display;
+        width:100%;
+        height: 900px;
+        background-color: white;
+        margin: 40px auto -400px auto;
+    }
+    .displayFood #fooditems{
+        display: grid;
+        width:100%;
+        margin: 10px auto;
+        text-align: center;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    
 }
