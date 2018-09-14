@@ -160,6 +160,11 @@ footer{
         display: none;
     }
 
+    #signin2{
+        line-height: 3em;
+        display: none;
+    }
+
     .signupform{
         
         width: 250px;
