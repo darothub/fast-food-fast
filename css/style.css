@@ -286,6 +286,10 @@ footer{
         width:150px;
     
     }
+
+    .displayFood{
+        margin-top: 420px;
+    }
 }
 
 @media only screen and (min-width:642px){
