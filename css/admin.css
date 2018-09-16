@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img{
+    width:80px;
+}
+
+a{
+   text-decoration: none;
+   color: black; 
+}
+ul{
+    list-style-type: none;
+}
+
+.bigwrapper{
+    display: grid;
+    width:100%;
+    min-height: 600px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "nav nav nav nav nav nav"
+                         "header header header header header header"
+                         "adminprofile adminprofile adminprofile adminprofile adminprofile adminprofile"
+                         "userprofile userprofile userprofile userprofile userprofile userprofile"
+                         "orderlist orderlist orderlist orderlist orderlist orderlist"
+                         "footer footer footer footer footer footer";
+}
+
+.nav{
+    grid-area: nav;
+    margin-top:10px;
+    width:100%;
+    height: 80px;
+    background-color:white;
+    border-bottom: 2px solid red;
+    
+}
+.nav #left-nav{
+    display: inline-block;
+    margin-top:px;
+    float: left;
+}
+
+.nav #left-nav li{
+    
+    display: inline-block;
+    font-size: 8px;
+    text-transform: uppercase;
+    border-left: 2px solid red;
+    margin-left: 0px;
+    
+}
+.nav #left-nav li a{
+   margin-left: 5px; 
+   display: block;
+   line-height: 5em;   
+}
+.nav #left-nav li img{
+    width: 70px;
+    margin-top: 7px;
+}
+.nav #right-nav{
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    margin-right: 10px;
+    
+}
+.nav #right-nav li a{
+    text-transform: uppercase;
+}
+.header-wrapper{
+    grid-area: header;
+    width: 100%;
+    height: 80px;
+    background-color: red;
+    margin-top: 10px;
+}
+.header-left{
+    float:left;
+    margin: 0px 0 0 5px;
+    margin-top: 20px;
+}
+.header-left span{
+    font-size: 18px;
+    color: white;
+}
+
+.header-left #user-status{
+    font-size: 12px;
+    color: white;   
+}
+.header-right{
+    float:right;
+    margin: 0px 5px 0 0px;
+}
+.header-right span{
+    font-size: 35px;
+    color: white;
+    line-height: 2em;
+}
+
+.header-wrapper span a{
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+.header-wrapper span a:hover{
+    font-weight: bold;
+}
+
+.profile{
+    grid-area: adminprofile;
+    width: 95%;
+    height: 200px;
+    background-color: #FFF799;
+    margin:10px auto;
+}
+
+.profilehead{
+    width: 100%;
+    height: 30px;
+    background-color: #FFF799;
+    border-bottom: 2px solid red;
+}
+
+.profilehead h4{
+    color: black;
+    line-height: 2em;
+}
+.profile-details-wrapper{
+    width: 100%;
+}
+
+.profile-details-wrapper h3{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.profile-details-left{
+    float: left;
+}
+.profile-details-left h4, .profile-details-right h4{
+    margin-top: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.profile-details-left p, .profile-details-right p{
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-details-right p{
+    margin-left: 80px;
+}
+.profile-details-right{
+    float: right;
+    
+}
+
+.userprofile{
+    grid-area: userprofile;
+    width: 95%;
+    height: 200px;
+    background-color: #FFF799;
+    margin:10px auto;
+}
+
+.orderlist{
+    grid-area: orderlist;
+    width: 100%;
+    min-height: 350px;
+    
+    
+
+}
+
+.listhead{
+    width: 100%;
+    height: 30px;
+    background-color: #FFF799;
+    border-bottom: 2px solid red;
+    
+}
+
+.listhead h4{
+    color: black;
+    line-height: 2em;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+footer{
+    grid-area: footer;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin-top:90px;
+}
+
+.list-details-wrapper{
+    display: grid;
+    width: 100%;
+    min-height:220px;
+    background-color: white;
+    margin-top: 10px;
+    border-bottom: 2px solid gray;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "leftlist rightlist rightlist list-details-btn";
+}
+.list-details-left{
+    grid-area: leftlist;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 2em;
+    margin-left:5px;
+}
+.list-details-right{
+    grid-area: rightlist;
+    font-size: 14px;
+    line-height: 2em;
+    margin-left:50px;
+}
+.list-details-btn{
+    grid-area:list-details-btn;
+}
+
+.btn{
+    width:70px;
+    height: 20px;
+    padding: 10px;
+    background-color: purple;
+    margin: 5px auto;
+    text-align: center;
+    line-height: 1em;
+    font-weight:30px;
+    
+}
+
+.btn a{
+    display: block;
+    color: white;
+}
+
+.btn:hover, .btn a:hover{
+    background-color: green;
+    color: white;
+}
+
+
+footer span{
+    line-height: 3em;
+}
