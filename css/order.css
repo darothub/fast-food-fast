@@ -231,7 +231,18 @@ footer{
     width: 150px;
     height: 40px;
 }
+.order-pop #food img{
+    width: 170px;
+    float: left;
+    display: none;
 
+}
+
+.order-pop #food h4{
+    color: white;
+    display: none;
+
+}
 .btn{
     width:100px;
     height: 20px;
@@ -423,5 +434,36 @@ footer{
     .nav #right-nav li a h4{
         display: inline-block;
         font-size: 14px;
+    }
+
+    .order-pop{
+        
+        height: 300px;
+        
+    }
+    
+    .order-pop #food{
+        width: 350px;
+        background-color: red;
+        margin: 0 auto;
+    }
+
+    .order-pop #food img{
+        width: 170px;
+        float: left;
+        display: block;
+
+    }
+
+    .order-pop #food h4{
+        color: white;
+        display: block;
+
+    }
+
+    .order-pop #food form{
+        
+        float: left;
+
     }
 }
