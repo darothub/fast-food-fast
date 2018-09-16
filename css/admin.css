@@ -194,15 +194,7 @@ ul{
     margin-left: 5px;
 }
 
-footer{
-    grid-area: footer;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background-color: red;
-    color: white;
-    margin-top:90px;
-}
+
 
 .list-details-wrapper{
     display: grid;
@@ -254,7 +246,286 @@ footer{
     color: white;
 }
 
+#sidebar{
+    width:100%;
+    height:200px;
+    background-color:#FFF799;
+    float: right;
+    position: absolute;
+    top:25%;
+    right: 0%;
+    display: none;
+    z-index: 11;
+}
+#sidebardiv{
+    margin: 35px auto;
+    text-align: center;
+    line-height: 2em;
+}
+.sidebaroptions{
+    display: block;
+    font-size: 16px;
+}
+
+footer{
+    grid-area: footer;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin-top:100px;
+}
+
 
 footer span{
     line-height: 3em;
+}
+
+@media only screen and (min-width:642px){
+    .bigwrapper{
+        display: grid;
+        width:100%;
+        min-height: 600px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "nav nav nav nav nav nav"
+                             "header header header header header header"
+                             "adminprofile adminprofile adminprofile userprofile userprofile userprofile "
+                             "orderlist orderlist orderlist orderlist orderlist orderlist"
+                             "footer footer footer footer footer footer";
+    }
+    .list-details-left{
+        font-size: 16px;
+    }
+    .list-details-right{
+
+        font-size: 16px;
+      
+    }                     
+                             
+}
+@media only screen and (min-width:883px){
+    .bigwrapper{
+        display: grid;
+        width:100%;
+        min-height: 600px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "nav nav nav nav nav nav"
+                             "header header header header header header"
+                             "adminprofile adminprofile adminprofile userprofile userprofile userprofile "
+                             "orderlist orderlist orderlist orderlist orderlist orderlist"
+                             "footer footer footer footer footer footer";
+    }
+    .list-details-wrapper{
+        display: grid;
+        width: 100%;
+        min-height:220px;
+        background-color: white;
+        margin-top: 10px;
+        border-bottom: 2px solid gray;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "leftlist leftlist leftlist leftlist leftlist"
+                             "rightlist rightlist rightlist rightlist rightlist "
+                             " list-details-btn list-details-btn list-details-btn list-details-btn list-details-btn"
+    }
+    .list-details-left{
+        font-size: 14px;
+        line-height: 3em;
+        margin-left:5px;
+        
+    }
+    .list-details-right{
+        grid-area: rightlist;
+        font-size: 14px;
+        line-height: 2em;
+        margin-left:5px;
+        margin-top: 5px;
+    }
+
+    .list-details-wrapper .list-details-left ul{
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: 120px 90px 190px 200px 100px 90px 95px;
+        grid-template-areas: "date user designation dish drink qty status";
+        
+        
+    }
+    .list-details-wrapper .list-details-right ul{
+        width: 100%;
+        margin-left: 10px;
+        display: grid;
+        grid-template-columns: 120px 90px 190px 200px 100px 90px 90px; 
+        grid-template-areas: "date user designation dish drink qty status";
+        background-color:white;
+        
+    }
+
+    .date{
+        grid-area: date;
+        
+        
+        
+    }
+    .user{
+        grid-area: user;
+        
+       
+    }
+    .designation{
+        grid-area: designation;
+        
+       
+    }
+    .dish{
+        grid-area: dish;
+        
+       
+    }
+    .drink{
+        grid-area: drink;
+       
+        
+    }
+    .qty{
+        grid-area: qty;
+        
+       
+    }
+
+    .status{
+        grid-area: status;
+
+    }
+    .list-details-wrapper ul li{
+        display: inline-block;
+        
+    }
+   
+    .list-details-left ul li{
+        margin-left: 0px;
+        
+    }
+    .list-details-right ul li{
+        margin-left: 0px;
+        
+    }
+    .list-details-btn{
+        grid-area:list-details-btn;
+        margin: 0 auto;
+    }   
+
+                             
+}
+@media only screen and (min-width:1024px){
+    .bigwrapper{
+        display: grid;
+        width:100%;
+        min-height: 600px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: ". nav nav nav nav ."
+                             ". header header header header ."
+                             ". adminprofile adminprofile userprofile userprofile . "
+                             ". orderlist orderlist orderlist orderlist ."
+                             ". footer footer footer footer .";
+    }
+    .list-details-wrapper{
+        display: grid;
+        width: 110%;
+        min-height:220px;
+        background-color: white;
+        margin-top: 10px;
+        border-bottom: 2px solid gray;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "leftlist leftlist leftlist leftlist leftlis"
+                             "rightlist rightlist rightlist rightlist rightlist "
+                             " list-details-btn list-details-btn list-details-btn list-details-btn list-details-btn"
+    }
+
+    .list-details-wrapper .list-details-left ul{
+        width: 100%;
+        margin-left: 15px;
+        display: grid;
+        grid-template-columns: 120px 90px 190px 200px 100px 90px 100px;
+        grid-template-areas: "date user designation dish drink qty status";
+        
+        
+    }
+    .list-details-wrapper .list-details-right ul{
+        width: 100%;
+        margin-left: 15px;
+        display: grid;
+        grid-template-columns: 120px 90px 190px 200px 100px 90px 100px; 
+        grid-template-areas: "date user designation dish drink qty status";
+        
+        
+    }
+
+    .date{
+        grid-area: date;
+        
+        
+        
+    }
+    .user{
+        grid-area: user;
+        
+       
+    }
+    .designation{
+        grid-area: designation;
+        
+       
+    }
+    .dish{
+        grid-area: dish;
+        
+       
+    }
+    .drink{
+        grid-area: drink;
+       
+        
+    }
+    .qty{
+        grid-area: qty;
+        
+       
+    }
+
+    .status{
+        grid-area: status;
+
+    }
+    .list-details-wrapper ul li{
+        display: inline-block;
+        
+    }
+    .list-details-left{
+        font-size: 16px;
+        line-height: 4em;
+        margin-left:5px;
+        
+    }
+    .list-details-right{
+        grid-area: rightlist;
+        font-size: 16px;
+        line-height: 2em;
+        margin-left:5px;
+        margin-top: 5px;
+    }
+    .list-details-left ul li{
+        margin-left: 0px;
+        
+    }
+    .list-details-right ul li{
+        margin-left: 0px;
+        
+    }
+    .list-details-btn{
+        grid-area:list-details-btn;
+        margin: 0 auto;
+    }                
+                             
 }
