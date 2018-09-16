@@ -432,7 +432,7 @@ footer span{
     }
     .list-details-wrapper{
         display: grid;
-        width: 110%;
+        width: 100%;
         min-height:220px;
         background-color: white;
         margin-top: 10px;
