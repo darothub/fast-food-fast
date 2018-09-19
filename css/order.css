@@ -502,7 +502,7 @@ footer span{
         width:100%;
         min-height: 600px;;
         grid-template-columns: repeat(6, 1fr);
-        grid-template-areas: "header header header header header header"
+        grid-template-areas: ". header header header header ."
                             ". advert advert advert advert ."
                              ". nav nav nav nav ."
                              ". display display display display ."

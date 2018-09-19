@@ -1,4 +1,36 @@
 let arrow = document.getElementById("arrow")
+let landingPageLink = document.getElementById("landP");
+let orderPageLink = document.getElementById("orderP");
+
+const showDiv=()=>{
+    let listEdit = document.getElementsByClassName("list-details-wrapper-edit");
+    let listheader = document.getElementById("listheader");
+    for(let i=0; i<listEdit.length; i++){
+        if (listEdit[1].style.display === "grid"){
+            listEdit[0].style.display = "none";
+          } else {
+            listEdit[0].style.display = "grid";
+            listEdit[1].style.display = "none";
+        }
+    }
+
+}
+
+const showOrderDiv=()=>{
+    let listEdit = document.getElementsByClassName("list-details-wrapper-edit");
+    let listheader = document.getElementById("listheader");
+    for(let i=0; i<listEdit.length; i++){
+        if (listEdit[0].style.display === "grid"){
+            listEdit[1].style.display = "none";
+          } else {
+            listEdit[1].style.display = "grid";
+            listEdit[0].style.display = "none";
+        }
+    }
+
+}
+
+
 
 arrow.addEventListener('click', (e)=>{
     
