@@ -145,7 +145,7 @@
                         </li>
                         
                     </ul>
-                    <div class="btn"><a href="" id="accept-btn">Add Items</a></div>
+                    <div class="btn"><a onclick="addItems()" href="#" id="accept-btn">Add Items</a></div>
                     
 
                 </div>
@@ -188,7 +188,7 @@
                             </li>
                             
                         </ul>
-                        <div class="btn"><a href="" id="accept-btn">Add Items</a></div>
+                        <div class="btn"><a onclick="addItems()" href="#" id="accept-btn">Add Items</a></div>
                         
     
                     </div>
@@ -216,6 +216,26 @@
                     </ul> 
                 </div>
             </section>
+
+                
+            <div id="add-items">
+                <span id="close">X</span>
+                <h4>Add Items</h4>
+                <div id="add-items-form">
+                    <form>
+                        <input type="text" placeholder="Title">
+                        <input type="file" name="photo" accept="image/*">
+                        <label>Upload to:</label>
+                        <select name="pages">
+                            <option value="landing-page">Landing page</option>
+                            <option value="order-page">Order Page</option>
+                            <option value="login-page">Login page</option>
+                        </select>
+                        <div class="btn"><a href="" id="accept-btn">Add</a></div>
+                    </form>
+                </div>
+            </div>
+            
         
             
         <footer>

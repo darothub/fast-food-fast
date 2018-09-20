@@ -1,6 +1,18 @@
 let arrow = document.getElementById("arrow")
 let landingPageLink = document.getElementById("landP");
 let orderPageLink = document.getElementById("orderP");
+let close = document.getElementById("close")
+
+
+const addItems=(e)=>{
+    let divItem = document.getElementById("add-items");
+    if(divItem.style.display === "block"){
+        divItem.style.display = "none"
+        return false
+    }
+    divItem.style.display = "block";
+    e.preventDefault()
+}
 
 const showDiv=()=>{
     let listEdit = document.getElementById("page-edit1")
@@ -47,6 +59,12 @@ arrow.addEventListener('click', (e)=>{
     sidebar.style.display = "block";
     e.preventDefault()
 });
+
+close.addEventListener("click", (e)=>{
+    let addItemDiv = document.getElementById("add-items")
+    addItemDiv.style.display = "none";
+    e.preventDefault()
+})
 
 const myChecked=()=> {
     let checkBox = document.getElementsByClassName("myCheck");

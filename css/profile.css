@@ -296,6 +296,53 @@ ul{
     margin:0 auto;
 }
 
+#add-items{
+    width:100%;
+    min-height: 250px;
+    background-color:grey;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 50%;
+    left: 0%;
+    text-align: center;
+    color: white;
+    opacity: .8;;
+    
+}
+
+#add-items-form{
+    width: 80%;
+    padding: 20px;
+    line-height: 2em;
+    margin: 0 auto;
+}
+
+#add-items-form input{
+    width: 100%;
+    padding: 3px;
+    line-height: 2em;
+}
+#add-items-form select{
+    width: 100%;
+    padding: 10px;
+    line-height: 2em;
+}
+
+#add-items #close{
+    color: white;
+}
+#add-items #close{
+   
+    margin-top: -20px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#add-items #close:hover{
+    font-weight: bold;
+}
+
 footer{
     grid-area: footer;
     width: 100%;
