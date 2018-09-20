@@ -3,28 +3,32 @@ let landingPageLink = document.getElementById("landP");
 let orderPageLink = document.getElementById("orderP");
 
 const showDiv=()=>{
-    let listEdit = document.getElementsByClassName("list-details-wrapper-edit");
-    let listheader = document.getElementById("listheader");
-    for(let i=0; i<listEdit.length; i++){
-        if (listEdit[1].style.display === "grid"){
-            listEdit[0].style.display = "none";
+    let listEdit = document.getElementById("page-edit1")
+    let listhead1 = document.getElementById("listhed1")
+        if (listEdit.style.display === "grid" && listhead1.style.display === "block"){
+            listEdit.style.display = "none";
+            listhead1.style.display = "none"
           } else {
-            listEdit[0].style.display = "grid";
-            listEdit[1].style.display = "none";
+            listEdit.style.display = "grid";
+            listhead1.style.display = "block"
+            
         }
-    }
+    
 
 }
 
+
 const showOrderDiv=()=>{
     let listEdit = document.getElementsByClassName("list-details-wrapper-edit");
-    let listheader = document.getElementById("listheader");
-    for(let i=0; i<listEdit.length; i++){
-        if (listEdit[0].style.display === "grid"){
+    let listhead2 = document.getElementById("listhed2")
+    for(let i=1; i<listEdit.length; i++){
+        if (listEdit[1].style.display === "grid" && listhead2.style.display === "block"){
             listEdit[1].style.display = "none";
+            listhead2.style.display = "none"
           } else {
             listEdit[1].style.display = "grid";
-            listEdit[0].style.display = "none";
+            listhead2.style.display = "block"
+            
         }
     }
 
