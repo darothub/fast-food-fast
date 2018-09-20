@@ -4,11 +4,6 @@ let orderPageLink = document.getElementById("orderP");
 let close = document.getElementById("close")
 
 
-close.addEventListener("click", ()=>{
-    let addItemDiv = document.getElementById("add-items")
-    addItemDiv.style.display = "none";
-    return false
-})
 
 const addItems=(e)=>{
     let divItem = document.getElementById("add-items");
