@@ -1,0 +1,31 @@
+{
+  "name": "fastfood",
+  "version": "1.0.0",
+  "description": "fast",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darothub/quikfood.git"
+  },
+  "author": "Darot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darothub/quikfood/issues"
+  },
+  "homepage": "https://github.com/darothub/quikfood#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "rules": {
+      "linebreak-style": 0,
+      "global-require": 0
+    }
+  }
+}
