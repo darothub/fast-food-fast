@@ -196,8 +196,8 @@ ul{
 .listhead{
     width: 100%;
     height: 30px;
-    background-color: #FFF799;
-    border-bottom: 2px solid red;
+    background-color: red;
+    border-bottom: 2px solid grey
     
 }
 
@@ -208,57 +208,35 @@ ul{
     margin-left: 5px;
 }
 
-
-
-.list-details-wrapper{
-    display: grid;
+.list-header{
     width: 100%;
-    min-height:220px;
-    background-color: white;
-    margin-top: 10px;
-    border-bottom: 2px solid gray;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "leftlist rightlist rightlist list-details-btn";
+    background-color: grey;
 }
-
-.list-details-left{
-    grid-area: leftlist;
+.list-header ul{
+    display: grid;
     text-transform: uppercase;
+    line-height: 2em;
+    font-size: 10px;
     font-weight: bold;
-    font-size: 14px;
+    grid-template-columns: 50px 50px 90px 60px 40px 30px 50px;
+    grid-template-areas: "date user designation dish drink qty status";
+}
+.list-details-container{
+    background-color: white;
+    min-height: 120px;
+    width: 98%;
+    margin-left: 5px;
+}
+.list-details{
+    width: 100%;
+    background-color: lightgray;
+}
+.list-details ul{
+    display: grid;
+    font-size: 10px;
     line-height: 2em;
-    margin-left:5px;
-}
-.list-details-right{
-    grid-area: rightlist;
-    font-size: 14px;
-    line-height: 2em;
-    margin-left:50px;
-}
-.list-details-btn{
-    grid-area:list-details-btn;
-}
-
-.btn{
-    min-width:70px;
-    height: 20px;
-    padding: 10px;
-    background-color: purple;
-    margin: 5px auto;
-    text-align: center;
-    line-height: 1em;
-    font-weight:30px;
-    
-}
-
-.btn a{
-    display: block;
-    color: white;
-}
-
-.btn:hover, .btn a:hover{
-    background-color: green;
-    color: white;
+    grid-template-columns: 50px 50px 90px 60px 40px 30px 50px;
+    grid-template-areas: "date user designation dish drink qty status";
 }
 
 #sidebar{
@@ -284,79 +262,6 @@ ul{
     display: block;
     font-size: 16px;
 }
-.list-details-wrapper-edit{
-    display: grid;
-    width: 100%;
-    min-height:220px;
-    background-color: white;
-    margin-top: 10px;
-    border-bottom: 2px solid gray;
-    justify-content: center;
-   
-}
-.landing-page-items{
-    margin-left: 13px;
-}
-.landing-page-items li{
-    display: inline-block;
-}
-
-.landing-page-items li span{
-    display: inline-block;
-    max-width: 100px;
-    text-align: center;
-    padding: 5px;
-    margin:0 auto;
-}
-
-#add-items{
-    width:100%;
-    min-height: 250px;
-    background-color:grey;
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    right: 50%;
-    left: 0%;
-    text-align: center;
-    color: white;
-    opacity: .8;
-    display: none;
-    
-}
-
-#add-items-form{
-    width: 80%;
-    padding: 20px;
-    line-height: 2em;
-    margin: 0 auto;
-}
-
-#add-items-form input{
-    width: 100%;
-    padding: 3px;
-    line-height: 2em;
-}
-#add-items-form select{
-    width: 100%;
-    padding: 10px;
-    line-height: 2em;
-}
-
-#add-items #close{
-    color: white;
-}
-#add-items #close{
-   
-    margin-top: -20px;
-    margin-right: 15px;
-    cursor: pointer;
-}
-
-#add-items #close:hover{
-    font-weight: bold;
-}
-
 footer{
     grid-area: footer;
     width: 100%;
@@ -364,7 +269,7 @@ footer{
     text-align: center;
     background-color: red;
     color: white;
-    margin-top:100px;
+    margin-top:50px;
 }
 
 
@@ -406,126 +311,45 @@ footer span{
                              "orderlist orderlist orderlist orderlist orderlist orderlist"
                              "footer footer footer footer footer footer";
     }
-    .list-details-wrapper{
-        display: grid;
+
+    .list-header{
         width: 100%;
-        min-height:220px;
-        background-color: white;
-        margin-top: 10px;
-        border-bottom: 2px solid gray;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: "leftlist leftlist leftlist leftlist leftlist"
-                             "rightlist rightlist rightlist rightlist rightlist "
-                             " list-details-btn list-details-btn list-details-btn list-details-btn list-details-btn"
+        background-color: grey;
     }
-    .list-details-left{
+    .list-header ul{
+        display: grid;
         font-size: 14px;
-        line-height: 3em;
-        margin-left:35px;
-        
+        text-transform: uppercase;
+        line-height: 2em;
+        font-weight: bold;
+        grid-template-columns: 90px 60px 150px 110px 100px 100px 100px;
+        grid-template-areas: "date user designation dish drink qty status";
     }
-    .list-details-right{
-        grid-area: rightlist;
+    .list-details-container{
+        background-color: #FFF799;
+        min-height: 120px;
+        width: 98%;
+        margin-left: 5px;
+    }
+    .list-details{
+        width: 100%;
+        background-color: lightgray;
+    }
+    .list-details ul{
+        display: grid;
         font-size: 14px;
         line-height: 2em;
-        margin-left:35px;
-        margin-top: 5px;
-    }
-
-    .list-details-wrapper .list-details-left ul{
-        width: 100%;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: 100px 80px 150px 110px 100px 100px 100px;
+        grid-template-columns: 90px 60px 150px 110px 100px 100px 100px;
         grid-template-areas: "date user designation dish drink qty status";
-        
-        
     }
-    .list-details-wrapper .list-details-right ul{
-        width: 100%;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: 100px 80px 150px 110px 100px 100px 100px; 
-        grid-template-areas: "date user designation dish drink qty status";
-        
-        
-    }
-
-    .date{
-        grid-area: date;
-        
-        
-        
-    }
-    .user{
-        grid-area: user;
-        
-       
-    }
-    .designation{
-        grid-area: designation;
-        
-       
-    }
-    .dish{
-        grid-area: dish;
-        
-       
-    }
-    .drink{
-        grid-area: drink;
-       
-        
-    }
-    .qty{
-        grid-area: qty;
-        
-       
-    }
-
-    .status{
-        grid-area: status;
-
-    }
-    .list-details-wrapper ul li{
-        display: inline-block;
-        
-    }
-   
-    .list-details-left ul li{
-        margin-left: 0px;
-        
-    }
-    .list-details-right ul li{
-        margin-left: 0px;
-        
-    }
-    .list-details-btn{
-        grid-area:list-details-btn;
-        margin: 0 auto;
-    }  
-    
-    .list-details-wrapper-edit{
-        display: grid;
-        width: 100%;
-        min-height:220px;
+    .list-details-container{
         background-color: white;
-        margin-top: 10px;
-        border-bottom: 2px solid gray;
-        justify-content: center;
-    }
-    .landing-page-items li{
-        display: inline-block;
-    }
+        min-height: 120px;
+        width: 98%;
+        margin-left: 5px;
+    }      
     
-    .landing-page-items li span{
-        display: block;
-        max-width: 100px;
-        text-align: center;
-        padding: 5px;
-        margin-left: 10px;
-    }
-
+    
     #sidebar{
         width:15%;
         height:90vh;
@@ -535,7 +359,6 @@ footer span{
         top:15%;
         right: 0%;
         display: none;
-        
         z-index: 11;
     }
     .sidebardiv{
@@ -567,56 +390,48 @@ footer span{
         width:100%;
         min-height: 400px;
         grid-template-columns: repeat(6, 1fr);
-        grid-template-areas: ". nav nav nav nav."
+        grid-template-areas: ". nav nav nav nav ."
                              ". header header header header ."
                              ". adminprofile adminprofile userprofile userprofile . "
                              ". orderlist orderlist orderlist orderlist ."
                              ". footer footer footer footer .";
     }
-    .list-details-wrapper{
-        display: grid;
-        width: 100%;
-        min-height:220px;
+    .list-details-container{
         background-color: white;
-        margin-top: 10px;
-        border-bottom: 2px solid gray;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: "leftlist leftlist leftlist leftlist leftlist"
-                             "rightlist rightlist rightlist rightlist rightlist "
-                             " list-details-btn list-details-btn list-details-btn list-details-btn list-details-btn"
+        min-height: 120px;
+        width: 99%;
+        margin-left: 5px;
     }
-    .list-details-left{
-        font-size: 14px;
-        line-height: 3em;
-        margin-left:35px;
+        .list-header{
+            width: 100%;
+            background-color: grey;
+        }
+        .list-header ul{
+            display: grid;
+            text-transform: uppercase;
+            line-height: 2em;
+            font-weight: bold;
+            grid-template-columns: 90px 60px 150px 110px 100px 100px 100px;
+            grid-template-areas: "date user designation dish drink qty status";
+        }
+        .list-details-container{
+            background-color: white;
+            min-height: 120px;
+            width: 98%;
+            margin-left: 5px;
+        }
+        .list-details{
+            width: 100%;
+            background-color: lightgray;
+        }
+        .list-details ul{
+            display: grid;
+            line-height: 2em;
+            grid-template-columns: 90px 60px 150px 110px 100px 100px 100px;
+            grid-template-areas: "date user designation dish drink qty status";
+        }
         
-    }
-    .list-details-right{
-        grid-area: rightlist;
-        font-size: 14px;
-        line-height: 2em;
-        margin-left:35px;
-        margin-top: 5px;
-    }
-
-    .list-details-wrapper .list-details-left ul{
-        width: 100%;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: 90px 80px 150px 90px 100px 90px 100px;
-        grid-template-areas: "date user designation dish drink qty status";
-        
-        
-    }
-    .list-details-wrapper .list-details-right ul{
-        width: 100%;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: 90px 80px 150px 90px 100px 90px 100px; 
-        grid-template-areas: "date user designation dish drink qty status";
-        
-        
-    }
+    
 
     .date{
         grid-area: date;
@@ -650,49 +465,6 @@ footer span{
        
     }
 
-    .status{
-        grid-area: status;
-
-    }
-    .list-details-wrapper ul li{
-        display: inline-block;
-        
-    }
-   
-    .list-details-left ul li{
-        margin-left: 0px;
-        
-    }
-    .list-details-right ul li{
-        margin-left: 0px;
-        
-    }
-    .list-details-btn{
-        grid-area:list-details-btn;
-        margin: 0 auto;
-    }  
-    
-    .list-details-wrapper-edit{
-        display: grid;
-        width: 100%;
-        min-height:220px;
-        background-color: white;
-        margin-top: 10px;
-        border-bottom: 2px solid gray;
-        justify-content: center;
-    }
-    .landing-page-items li{
-        display: inline-block;
-    }
-    
-    .landing-page-items li span{
-        display: block;
-        max-width: 100px;
-        text-align: center;
-        padding: 5px;
-        margin-left: 10px;
-    }
-
     #sidebar{
         width:15%;
         height:90vh;
@@ -702,7 +474,6 @@ footer span{
         top:15%;
         right: 0%;
         display: none;
-        
         z-index: 11;
     }
     .sidebardiv{
