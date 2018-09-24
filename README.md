@@ -1,11 +1,2 @@
-{
-  "env": {
-    "mocha": true
-  },
-  "plugins": [
-    "mocha"
-  ],
-  "rules": {
-    "mocha/no-exclusive-tests": "error"
-  }
-}
+# FAST-FOOD-FAST
+A web application for users to have access to food varieties
