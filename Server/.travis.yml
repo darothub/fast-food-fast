@@ -5,6 +5,3 @@ test:
  - npm test
 install:
 - npm install
-
-after_success:
-- npm run coverage
