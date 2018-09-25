@@ -27,10 +27,11 @@ const getAllOrders = (req, res) => {
 
 const getOrderById = (req, res) => {
   const order = orders.find(element => element.id === parseInt(req.params.id, 10));
-  if (order) {
-    res.status(200).send({ message: 'Success', result: order });
+  if (!order) {
+    res.status(404).send({ message: 'Not Found' });
+    return;
   }
-  res.status(404).send({ message: 'Not Found' });
+  res.status(200).send({ message: 'Success', result: order });
 };
 
 const createOrder = (req, res) => {
@@ -38,6 +39,7 @@ const createOrder = (req, res) => {
   const { error } = result;
   if (error) {
     res.status(400).send(error.details[0].message);
+    return;
   }
   const newOrder = {
     id: orders.length + 1,
@@ -63,6 +65,7 @@ const updateOrder = (req, res) => {
   const { error } = result;
   if (error) {
     res.status(400).send(error.details[0].message);
+    return;
   }
   order.name = req.body.name;
   order.designation = req.body.designation;
