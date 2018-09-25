@@ -74,10 +74,11 @@ describe('POST /api/v1/orders', () => {
         res.should.to.have.status(201);
         res.body.should.have.property('result');
         res.body.should.be.an('object');
+        done();
       })
       .catch((err) => {
         console.log(err);
+        done();
       });
-    done();
   });
 });
