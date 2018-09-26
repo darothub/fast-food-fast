@@ -1,4 +1,4 @@
-import { chai, assert } from 'chai';
+import chai from 'chai';
 
 import chaiHttp from 'chai-http';
 
@@ -24,8 +24,8 @@ describe('GET /api/v1/orders', () => {
     chai.request(server)
       .get('/api/v1/orders')
       .end((err, res) => {
-        assert.ok(res.status(200));
-        assert.isArray(res.body);
+        res.should.to.have.status(200);
+        res.body.should.be.a('array');
         done();
       });
   });

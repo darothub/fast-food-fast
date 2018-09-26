@@ -4,7 +4,7 @@
   "description": "fast",
   "main": "app.js",
   "scripts": {
-    "test": "nyc mocha --compilers js:babel-register server/test/test.spec.js --exit",
+    "test": "nyc mocha --compilers js:babel-register Server/test/test.spec.js --exit",
     "start": "node dist/app.js",
     "start:dev": "nodemon --exec babel-node server/app.js ",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
