@@ -4,7 +4,7 @@
   "description": "fast",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register test/**/*.js",
+    "test": "mocha --compilers js:babel-core/register Server/test/**/*.js --exit 20000",
     "start": "nodemon app.js --exec babel-node --"
   },
   "repository": {
@@ -33,13 +33,14 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.2.0",
+    "chai-joi": "^2.0.3",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
     "request": "^2.88.0",
-    "should": "^13.2.3",
-    "nodemon": "^1.18.4"
+    "should": "^13.2.3"
   },
   "env": {
     "node": true,
