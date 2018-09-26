@@ -9,7 +9,7 @@
   "scripts": {
     "test": "nyc mocha --compilers js:babel-register Server/test/test.spec.js --exit",
     "start": "node dist/app.js",
-    "start:dev": "node --exec babel-node Server/app.js ",
+    "start:dev": "babel-node Server/app.js ",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "babel server -d dist",
     "heroku-postbuild": "npm run start:dev",
