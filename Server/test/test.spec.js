@@ -1,4 +1,4 @@
-import chai from 'chai';
+import chai, { expect, assert } from 'chai';
 
 import chaiHttp from 'chai-http';
 
@@ -12,8 +12,8 @@ describe('Homepage', () => {
     chai.request(server)
       .get('/')
       .end((err, res) => {
-        res.body.should.deep.equal({ message: 'Hello World' });
-        res.should.have.status(200);
+        expect(res.body).deep.equal({ message: 'Hello World' });
+        expect(res).to.have.status(200);
         done();
       });
   });
@@ -24,8 +24,7 @@ describe('GET /api/v1/orders', () => {
     chai.request(server)
       .get('/api/v1/orders')
       .end((err, res) => {
-        res.should.to.have.status(200);
-        res.body.should.be.a('array');
+        assert.isTrue(res.status(200));
         done();
       });
   });
