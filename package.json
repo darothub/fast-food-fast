@@ -4,7 +4,7 @@
   "description": "fast",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register Server/test/**/*.js",
+    "test": "mocha --compilers js:babel-core/register Server/test/**/*.js --exit 20000",
     "start": "nodemon app.js --exec babel-node --"
   },
   "repository": {
