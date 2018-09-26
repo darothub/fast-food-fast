@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "fast",
   "main": "app.js",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "test": "nyc mocha --compilers js:babel-register Server/test/test.spec.js --exit",
     "start": "node dist/app.js",
