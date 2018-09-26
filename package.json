@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nyc mocha --compilers js:babel-core/register Server/test/**/*.js --exit 20000",
     "start": "nodemon app.js --exec babel-node --",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
