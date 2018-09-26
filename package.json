@@ -4,8 +4,9 @@
   "description": "fast",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register Server/test/**/*.js --exit 20000",
-    "start": "nodemon app.js --exec babel-node --"
+    "test": "nyc mocha --compilers js:babel-core/register Server/test/**/*.js --exit 20000",
+    "start": "nodemon app.js --exec babel-node --",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4",
+    "nyc": "^13.0.1",
     "request": "^2.88.0",
     "should": "^13.2.3"
   },
