@@ -1,28 +1,7 @@
-import Joi from 'joi';
-
 import orders from '../db/db';
 
-const validateOrder = (input) => {
-  const schema = {
-    name: Joi.string().alphanum().min(3).max(30)
-      .required(),
-    designation: Joi.string().alphanum().min(3).max(30)
-      .required(),
-    dishType: Joi.string()
-      .required(),
-    drink: Joi.string().alphanum().min(3).max(30)
-      .required(),
-    qty: Joi.number().min(1).max(2)
-      .required(),
-    price: Joi.number().min(3)
-      .required(),
-    status: Joi.string(),
-  };
-  return Joi.validate(input, schema);
-};
-
 const getAllOrders = (req, res) => {
-  res.status(200).send({ message: 'Success', result: orders });
+  res.status(200).json(orders);
 };
 
 const getOrderById = (req, res) => {
@@ -35,11 +14,11 @@ const getOrderById = (req, res) => {
 };
 
 const createOrder = (req, res) => {
-  const result = validateOrder(req.body);
-  const { error } = result;
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
+  if (!req.body.name) {
+    return res.status(400).send({ name: 'name is required' });
+  }
+  if (!req.body.dishType) {
+    return res.status(400).send({ dishType: 'dishType is required' });
   }
   const newOrder = {
     id: orders.length + 1,
@@ -48,23 +27,17 @@ const createOrder = (req, res) => {
     designation: req.body.designation,
     dishType: req.body.dishType,
     drink: req.body.drink,
-    qty: req.body.qty,
-    price: req.body.price,
+    qty: parseInt(req.body.qty, 10),
+    price: parseInt(req.body.price, 10),
     status: 'pending',
   };
   orders.push(newOrder);
-  res.send({ message: 'Success', result: orders });
+  return res.status(200).send(newOrder);
 };
 const updateOrder = (req, res) => {
   const order = orders.find(element => element.id === parseInt(req.params.id, 10));
   if (!order) {
     res.status(404).send({ message: 'Not Found' });
-    return;
-  }
-  const result = validateOrder(req.body);
-  const { error } = result;
-  if (error) {
-    res.status(400).send(error.details[0].message);
     return;
   }
   order.name = req.body.name;
@@ -74,7 +47,7 @@ const updateOrder = (req, res) => {
   order.qty = req.body.qty;
   order.price = req.body.price;
   order.status = req.body.status;
-  res.send({ message: 'Updated', result: order });
+  res.status(200).send({ message: 'Updated', result: order });
 };
 
 const deleteOrder = (req, res) => {
