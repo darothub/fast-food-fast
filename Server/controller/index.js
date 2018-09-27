@@ -1,7 +1,7 @@
 import orders from '../db/db';
 
 const getAllOrders = (req, res) => {
-  res.status(200).json(orders);
+  res.status(200).send({ message: 'Success', result: orders });
 };
 
 const getOrderById = (req, res) => {
@@ -15,10 +15,21 @@ const getOrderById = (req, res) => {
 
 const createOrder = (req, res) => {
   if (!req.body.name) {
-    return res.status(400).send({ name: 'name is required' });
+    return res.status(400).send({ name: false, message: 'name is required' });
   }
   if (!req.body.dishType) {
-    return res.status(400).send({ dishType: 'dishType is required' });
+    return res.status(400).send({ dishType: false, message: 'dishType is required' });
+  }
+  if (!req.body.designation) {
+    return res.status(400).send({ designation: false, message: 'designation is required' });
+  }
+
+  if (!req.body.quantity) {
+    return res.status(400).send({ quantity: false, message: 'quantity is required' });
+  }
+
+  if (!req.body.price) {
+    return res.status(400).send({ price: false, message: 'price is required' });
   }
   const newOrder = {
     id: orders.length + 1,
@@ -27,12 +38,12 @@ const createOrder = (req, res) => {
     designation: req.body.designation,
     dishType: req.body.dishType,
     drink: req.body.drink,
-    qty: parseInt(req.body.qty, 10),
+    quantity: parseInt(req.body.quantity, 10),
     price: parseInt(req.body.price, 10),
     status: 'pending',
   };
   orders.push(newOrder);
-  return res.status(200).send(newOrder);
+  return res.status(200);
 };
 const updateOrder = (req, res) => {
   const order = orders.find(element => element.id === parseInt(req.params.id, 10));
@@ -44,11 +55,12 @@ const updateOrder = (req, res) => {
   order.designation = req.body.designation;
   order.dishType = req.body.dishType;
   order.drink = req.body.drink;
-  order.qty = req.body.qty;
+  order.quantity = req.body.quantity;
   order.price = req.body.price;
   order.status = req.body.status;
   res.status(200).send({ message: 'Updated', result: order });
 };
+
 
 const deleteOrder = (req, res) => {
   const order = orders.find(element => element.id === parseInt(req.params.id, 10));
