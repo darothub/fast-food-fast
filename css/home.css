@@ -1,160 +1,434 @@
-html, body{
+*{
     margin: 0;
-    display: table;
-    height: 100%;
-    width:100%;
-}
-body{
-    background-image: url('../images/landingpageimage.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-@font-face{
-    font-family: "myfont";
-    src: url(font/SPINC___.TTF);
-}
-a{
-    text-decoration: none;
-}
-.container{
-    padding: 0px;
-    height: auto;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.nav-left img{
-    width: 70px;
-    float: left;
-    margin-left:-20px;
-    margin-top: 10px;
-    display: block;
+.bigwrapper{
+    display: grid;
+    width:100%;
+    height: 800px;;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav nav"
+                         "banner signup"
+                         "display display"
+                         "orderstep orderstep"
+                         "footer footer";
+
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}
+
+.navsetting{
+    grid-area: nav;
+}
+
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: red;
 }
 .navbar{
     width: 100%;
-    height: 80px;
-    background-color: #E4c9a1;
-    margin: -20px auto;
+    height: 40px;
+    background-color: red;
 }
 
-.nav-right{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position:-webkit-sticky;
-    position:sticky;
-    width: 200px;
+.navbar ul{
+    
+    font-size: 14px;
+}
+
+.navbar ul li{
+   display: inline-block;
+}
+
+.navbar ul li a{
+    color: white;
+ }
+
+ #arrow{
+     font-weight: 50px;
+     font-size: 40px;
+     float: right;
+     line-height: .8em;
+     cursor: pointer;
+ }
+
+ 
+#signup{
+    line-height: 3em;
+}
+
+#signin{
+    line-height: 3em;
+}
+
+#sidebar{
+    width:15%;
+    height:120px;
+    background-color:#FFF799;
     float: right;
+    position: absolute;
+    top:6%;
+    right: 0%;
+    display: none;
+    z-index: 11;
 }
-.nav-right li {
-    display: inline-block;
-    margin-left: 10px;  
+#sidebardiv{
+    margin: 10px auto;
+    text-align: center;
+    line-height: 2em;
 }
-.nav-right li a{
+.sidebaroptions{
     display: block;
-    color: #BB4410;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 5em;
+    font-size: 14px;
+}
+
+.signupform{
+    grid-area: signup;
+    grid-column: 2/3;
+    width: 350px;
+    height:400px;
+    background-color:grey;
+    float:right;
+    margin-right:0px;
+    margin-top: 0px;
+    border-radius: 5px;
     
 }
 
-.nav-right li a:hover{
-    background-color: #f5af4f;
-}
-
-.banner-text{
-    width: 100px;
-    font-family: "myfont", sans-serif;
-    position: absolute;
-    top: 20%;
-    left: 60%;
+.signupform .wrapper{
+    width: 80%;
+    height:90%;
+    margin: 20px auto;
     
 }
-
-.banner-text h1{
-    font-size: 50px;
-    color:#f5af4f;
-    text-shadow: 2px 2px black;
+.wrapper input{
+    width:100%;
+    height:50px;
+    margin: 20px auto;
 }
+
 .btn{
-    width:90px;
-    height: 40px;
+    width:100px;
+    height: 30px;
     padding: 10px;
-    background-color:black;
-    position: absolute;
-    top: 50%;
-    left: 60%;
+    background-color: purple;
+    margin: 20px auto;
     text-align: center;
     line-height: 2em;
     font-weight:30px;
-    float: right;  
-    margin-top: 25px;
+    
 }
-.btn-two{
-    width:90px;
-    height: 40px;
-    padding: 10px;
-    background-color:black;
-    position: absolute;
-    top: 60%;
-    left: 60%;
-    text-align: center;
-    line-height: 2em;
-    font-weight:30px;
-    float: right;  
-    margin-top: 25px;
-}
-.btn a, .btn-two a{
+
+.btn a{
     display: block;
     color: white;
-    font-size: 20px;
 }
+
+.btn:hover, .btn a:hover{
+    background-color: green;
+    color: white;
+}
+.banner{
+    grid-area: banner;
+    grid-column: 1/3;
+    grid-row: 3;
+    width:100%;
+    height: 430px;
+    background-color: #FFF799;
+    position: relative;
+    z-index: 10;
+}
+
+.banner #image{
+    display: grid;
+    width:60%;
+    position: relative;
+    margin: 0 auto;
+    
+}
+img{
+    width:200px;
+    height: 160px;
+    margin: 0 auto;
+}
+
+.banner div p{
+    margin-top: 20px;
+    font-size:24px;
+    text-align: center;
+    font-weight:bold;
+}
+
+#order{
+    background-color: red;
+    margin-top: 30px;
+    width:200px;
+    height: 50px;
+}
+
+#orderLink{
+    line-height: 2.5em;
+    color: #FFF799;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#order:hover, #order a:hover{
+    background-color: #F19A82;
+    color: white;
+}
+
+.displayFood{
+    grid-area: display;
+    width:100%;
+    height: 400px;
+    background-color: white;
+    margin: 450px auto 490px auto;
+}
+
+.displayFood #fooditems{
+    display: grid;
+    width:100%;
+    margin: 10px auto;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#fooditems span{
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.orderstep{
+    grid-area: orderstep;
+    width: 100%;
+    height: 950px;
+    margin: 10px auto;
+    margin-bottom: 0px;
+    background-color: #FFF799;
+}
+
+.orderstep #orderstep{
+    display: grid;
+    grid-template-columns: 1fr;
+    width:100%;
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#orderstep #orderhead{
+    width: 100%;
+    height:50px;
+    line-height: 3em;
+    background-color: red;
+    margin-top: 0px;
+}
+
+
+
+#orderstep span{
+    display: grid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+#orderstep span img{
+    margin-top: -15px;
+    margin-bottom: 15px;
+
+}
+
 
 footer{
-    background-color:#E4c9a1;
-    display: table-row;
-    height: 50px;
+    grid-area: footer;
+    width: 100%;
+    height: 80px;
+    margin-bottom: -150px;
+    background-color: red;
     text-align: center;
-    color: #BB4410;
-    line-height: 4em;
+    line-height: 5em;
 }
 
-@media only screen and (max-width:320px){
-    .btn{
-        margin-top: 45px;
-    }
-    .btn-two{
-        margin-top: 55px;
-    }
-
-}
-
-
-@media only screen and (min-width:768px){
-    .banner-text{
-        width: 100px;
-        font-family: "myfont", sans-serif;
-        position: absolute;
-        top: 25%;
-        left: 60%;
+@media only screen and (max-width:641px){
+    .signupform{
+        display:none;
         
     }
-    .btn{
-        margin-top: 20px;
-        width: 150px;
-        height: 50px;
+    #signin{
         line-height: 3em;
+        display: none;
     }
-    .btn-two{
-        margin-top: 20px;
-        width: 150px;
-        height: 50px;
+
+    #sidebar{
+        width:40%;
+        
+    }
+    #home{
         line-height: 3em;
+        display: none;
     }
-    .btn a, .btn-two a{
-        display: block;
-        color: white;
-        font-size: 30px;
+    #orderstep span img{
+        width:150px;
+    
+    }
+
+    .displayFood{
+        margin-top: 420px;
+    }
+}
+
+@media only screen and (min-width:642px){
+    .bigwrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "nav nav"
+                            "signup signup"
+                            "banner banner"
+                            "display display"
+                            "orderstep orderstep"
+                            "footer footer";
+
+    }
+    #signup{
+        display: none;
+    }
+
+  
+
+    #home{
+        line-height: 3em;
+        display: none;
+    }
+
+    .banner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 480px;
+        
+    }
+
+    .banner #image{
+        display: grid;
+        width:60%;
+        position: relative;
+        margin: 35px auto;
+        
+    }
+    img{
+        width:200px;
+        height: 160px;
+        margin: 0 auto;
+    }
+    
+    .banner div p{
+        margin-top: 20px;
+        font-size:24px;
+        text-align: center;
+        font-weight:bold;
+    }
+    #order{
+        grid-row:2;
+        margin-top: 0px;
+    }
+    .signupform{
+        
+        margin-top: -330px;
+       
+        
+    }
+    .displayFood{
+        grid-area: display;
+        width:100%;
+        height: 900px;
+        background-color: white;
+        margin: 40px auto -400px auto;
+    }
+    .displayFood #fooditems{
+        display: grid;
+        width:100%;
+        margin: 10px auto;
+        text-align: center;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    .displayFood #fooditems img{
+       width: 300px;
+       height:200px;
+        
+    }
+}
+
+@media only screen and (min-width:968px){
+    .banner{
+        height: 570px;
+        background-image: url("../images/food1.jpg");
+        background-repeat: no-repeat;
+        background-size: 1500px 600px;
+    }
+    .banner div p{
+        margin-top: 20px;
+        font-size:38px;
+        color:white;
+        text-shadow: #000 0px 3px 4px;
+    }
+
+    .displayFood{
+        grid-area: display;
+        width:100%;
+        height: 1150px;
+        
+    }
+
+    .displayFood #fooditems img{
+        width: 500px;
+        height:300px;
+         
+     }
+
+     .orderstep{
+        
+        width: 100%;
+        height: 600px;
+        margin: 10px auto;
+        margin-bottom: 0px;
+        background-color: #FFF799;
+    }
+
+     .orderstep #orderstep{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width:100%;
+
+    }
+    .orderstep #orderstep #orderhead{
+        grid-column: 1/4;
+    }
+    .orderstep #orderstep h2{
+        grid-column: 1/4;
+        margin-top:50px;
+        margin-bottom: 30px;
+    }
+
+   
+
+
+    .signupform{
+       margin-left:150px;
+       margin-bottom:90px;
+        
     }
 }
