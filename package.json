@@ -8,11 +8,12 @@
   },
   "scripts": {
     "test": "nyc mocha --compilers js:babel-register Server/test/test.spec.js --exit",
-    "start": "node dist/app.js",
+    "start": "npm run build && npm run server",
+    "server": "node dist/app.js",
     "start:dev": "babel-node Server/app.js ",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "babel server -d dist",
-    "heroku-postbuild": "npm run start:dev",
+    "heroku-postbuild": "npm run start",
     "production": "npm run build && node bin/production"
     
   },
