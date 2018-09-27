@@ -1,0 +1,160 @@
+html, body{
+    margin: 0;
+    display: table;
+    height: 100%;
+    width:100%;
+}
+body{
+    background-image: url('../images/landingpageimage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@font-face{
+    font-family: "myfont";
+    src: url(font/SPINC___.TTF);
+}
+a{
+    text-decoration: none;
+}
+.container{
+    padding: 0px;
+    height: auto;
+}
+
+.nav-left img{
+    width: 70px;
+    float: left;
+    margin-left:-20px;
+    margin-top: 10px;
+    display: block;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color: #E4c9a1;
+    margin: -20px auto;
+}
+
+.nav-right{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position:-webkit-sticky;
+    position:sticky;
+    width: 200px;
+    float: right;
+}
+.nav-right li {
+    display: inline-block;
+    margin-left: 10px;  
+}
+.nav-right li a{
+    display: block;
+    color: #BB4410;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 5em;
+    
+}
+
+.nav-right li a:hover{
+    background-color: #f5af4f;
+}
+
+.banner-text{
+    width: 100px;
+    font-family: "myfont", sans-serif;
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    
+}
+
+.banner-text h1{
+    font-size: 50px;
+    color:#f5af4f;
+    text-shadow: 2px 2px black;
+}
+.btn{
+    width:90px;
+    height: 40px;
+    padding: 10px;
+    background-color:black;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    text-align: center;
+    line-height: 2em;
+    font-weight:30px;
+    float: right;  
+    margin-top: 25px;
+}
+.btn-two{
+    width:90px;
+    height: 40px;
+    padding: 10px;
+    background-color:black;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    text-align: center;
+    line-height: 2em;
+    font-weight:30px;
+    float: right;  
+    margin-top: 25px;
+}
+.btn a, .btn-two a{
+    display: block;
+    color: white;
+    font-size: 20px;
+}
+
+footer{
+    background-color:#E4c9a1;
+    display: table-row;
+    height: 50px;
+    text-align: center;
+    color: #BB4410;
+    line-height: 4em;
+}
+
+@media only screen and (max-width:320px){
+    .btn{
+        margin-top: 45px;
+    }
+    .btn-two{
+        margin-top: 55px;
+    }
+
+}
+
+
+@media only screen and (min-width:768px){
+    .banner-text{
+        width: 100px;
+        font-family: "myfont", sans-serif;
+        position: absolute;
+        top: 25%;
+        left: 60%;
+        
+    }
+    .btn{
+        margin-top: 20px;
+        width: 150px;
+        height: 50px;
+        line-height: 3em;
+    }
+    .btn-two{
+        margin-top: 20px;
+        width: 150px;
+        height: 50px;
+        line-height: 3em;
+    }
+    .btn a, .btn-two a{
+        display: block;
+        color: white;
+        font-size: 30px;
+    }
+}

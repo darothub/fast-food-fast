@@ -8,43 +8,38 @@
     <title>Fastfood|Login</title>
 </head>
 <body>
-    <section class="bigwrapper">
-        <section class="navsetting">
+    <section class="container">
             <nav class="navbar">
-                <ul>
-                    <li id="signup"><a href="index.html" >Sign up</a></li>
-                    <li id="signin"><a  href="" >Sign in</a></li>
+                <ul class="nav-left">
+                    <img src="./images/food33.gif" alt="logo">
+                </ul>
+                <ul class="nav-right">
                     <li id="home"><a  href="index.html" >Home</a></li>
-                    <li id="arrow"><a href="">&#8595;</a></li>
+                    <li id="signup"><a href="index.html" >Sign up</a></li>
+                    <li id="signin"><a  href="" >Contact us</a></li>
+                    
                 </ul>
             </nav>
-            <section id="sidebar">
-                <div id="sidebardiv">
-                    <ul>
-                        <li class="sidebaroptions" id="home2"><a href="index.html" >Home</a></li>
-                        <li class="sidebaroptions" id="signin2"><a href="" >Sign in</a></li>
-                        <li class="sidebaroptions" id="signup2"><a href="index.html" >Sign up</a></li>
-                        <li class="sidebaroptions"><a href="" >Order</a></li>
-                        <li class="sidebaroptions"><a href="" >Contact us</a></li>
-                    </ul> 
-                </div>
-            </section>
-        </section>
-        <section class="signupform">
-            <div class="wrapper" id="wrap">
+            
+        <section class="loginform">
+            <div class="login-avatar">
+            <img src="./images/account.gif" alt="avatar">
+            </div>
+            <div class="form-wrapper" id="wrap">
                 <form>
-                    <input type="email" placeholder="you@example.com" id="email" class="input">
-                    <input type="password" placeholder="Enter the password" id="password" class="input">
-                    <div class="btn"><a href="user.html" id="enter">Sign in</a></div>
-                    <div class="btn"><a href="profile.html" id="enter">Sign in as admin</a></div>
+                    <label id="username-label">Username</label><br>
+                    <input type="text" placeholder="username" id="username" class="input">
+                    <label id="password-label">Password</label>
+                    <input type="password" placeholder="Enter the password" id="password" class="input"><br>
+                    <input type="checkbox" id="checkbox"><p id="checkbox-label">Remember me</p>
+                    <div class="btn"><a href="user.html" id="enter">Log in</a></div>
                 </form>
             </div>
         </section>
-            
-        <footer>
-            <span>darotfoods</span>
-        </footer>
     </section>
+    <footer>
+        <span>darotfoods</span>
+    </footer>
     
     
     <script src="js/index.js">
