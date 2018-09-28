@@ -111,6 +111,8 @@ a{
     font-size: 20px;
 }
 
+
+
 footer{
     background-color:#E4c9a1;
     display: table-row;
@@ -185,7 +187,7 @@ footer{
 
 }
 
-@media only screen and (min-width:1026px){
+@media only screen and (min-width:1027px){
     
     .banner-text{
         width: 100px;
@@ -202,10 +204,12 @@ footer{
     }
  
     .btn{
-        margin-top: 10px;
+        top: 55%;
+        left: 50%;
     }
     .btn-two{
-        margin-top: -25px;
+        top: 65%;
+        left: 50%;
     }
     .btn:hover, .btn a:hover, .btn-two:hover, .btn-two a:hover{
         display: block;

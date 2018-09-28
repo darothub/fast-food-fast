@@ -8,172 +8,36 @@
     <title>Fastfood|Order</title>
 </head>
 <body>
-    <section class="bigwrapper">
-       <header>
-           <div class="header-wrapper">
-                <div id="logo">
-                    <img src="images/food33.gif">
-                </div>
-                <h2>Yaay! We are open</h2>
-            </div>
-       </header>
-       <div class="nav">
-           
-           <ul id="left-nav">
-               <li>
-                   <a href="">Meals</a>
-               </li>
-               <li>
-                    <a href="">Snacks</a>
-                </li>
-                <li>
-                    <a href="">Drinks</a>
-                </li>
-           </ul>
-
-           <ul id="right-nav">
-                <li>
-                    <a href=""><h4>Account</h4><img src="images/account.gif"> </a>    
-                </li>
-                <li>
-                    <a href=""><h4>Cart</h4><img src="images/cart.gif"></a>   
-                 </li>
-                 
-            </ul>
-
-       </div>
-       <div class="advert">
-           <div id="advert-inner">
-                <img src="images/call.gif">
-                <h2>Call us now 070-FASTFOOD</h2>
-            </div>
-       </div>
-       <div class="display">
-           <div class="food">
-               <div id="food1">
-                    <a href="#" class="foodlink" onclick="orderPopUp()">
-                        <img src="images/mealcom.gif">
-                        <h4>Meal 1</h4>
-                    </a>
-               </div>
-           </div>
-           <div class="food">
-                <div id="food2">
-                     <a href="#" class="foodlink" onclick="orderPopUp()">
-                         <img src="images/mealcom.gif">
-                         <h4>Meal 2</h4>
-                     </a>
-                </div>
-            </div>
-            <div class="food">
-                <div id="food3">
-                        <a href="#" class="foodlink" onclick="orderPopUp()">
-                            <img src="images/mealcom.gif">
-                            <h4>Meal 3</h4>
-                        </a>
-                </div>
-            </div>
-            <div class="food">
-                <div id="food4">
-                        <a href="#" class="foodlink" onclick="orderPopUp()">
-                            <img src="images/mealcom.gif">
-                            <h4>Meal 3</h4>
-                        </a>
-                </div>
-            </div>
-            <div class="food">
-                <div id="food5">
-                        <a href="#" class="foodlink" onclick="orderPopUp()">
-                            <img src="images/mealcom.gif">
-                            <h4>Meal 3</h4>
-                        </a>
-                </div>
-            </div>
-            <div class="food">
-                <div id="food6">
-                        <a href="#" class="foodlink" onclick="orderPopUp()">
-                            <img src="images/mealcom.gif">
-                            <h4>Meal 3</h4>
-                        </a>
-                </div>
-            </div>
-            <div class="food">
-                <div id="food7">
-                        <a href="#" class="foodlink" onclick="orderPopUp()">
-                            <img src="images/mealcom.gif">
-                            <h4>Meal 3</h4>
-                        </a>
-                </div>
-            </div>
-            <div class="food">
-                <div id="food8">
-                        <a href="#" class="foodlink" onclick="orderPopUp()">
-                            <img src="images/mealcom.gif">
-                            <h4>Meal 3</h4>
-                        </a>
-                </div>
-            </div>
-            <div class="food">
-                    <div id="food8">
-                            <a href="#" class="foodlink" onclick="orderPopUp()">
-                                <img src="images/mealcom.gif">
-                                <h4>Meal 3</h4>
-                            </a>
+    <section class="container">
+        <div class="banner">
+            <nav class="navbar">
+                <div class="nav-left">
+                    <div class="logo">
+                        <h1>FastfoodFast</h1>
                     </div>
                 </div>
-            
-            
-       </div>
-
-       <div class="order-pop" id="orderpop">
-           <div class="order-wrapper">
-                
-               <h3>Meal order</h3>
-               <span id="close">X</span>
-               <div id="food">
-                   
-                    <img src="images/mealcom.gif">
-                    <h4>Meal 3</h4>
-                                    
-                    <form id="order-form">
-                        <span class="select-header">Dish</span>
-                        <select name="foods">
-                            <option value="choose">Choose</option>
-                            <option value="food1">Chip Whizz</option>
-                            <option value="food2">Hot Rice</option>
-                            <option value="food3">Sexy Yam</option>
-                            <option value="food4">Romantique Beans</option>
-                        </select>
-                        <span class="select-header">Drink</span>
-                        <select name="foods">
-                            <option value="choose">Choose</option>
-                            <option value="drink1">Coke</option>
-                            <option value="drink2">Tandi</option>
-                            <option value="drink3">Sprite</option>
-                            <option value="drink4">Crush</option>
-                        </select>
-                        <span class="select-header">Qty</span>
-                        <select name="foods">
-                            <option value="num1">1</option>
-                            <option value="num2">2</option>
-                            <option value="num3">3</option>
-                            <option value="num4">4</option>
-                            <option value="num5">5</option>
-                        </select>
-                        <div class="btn"><a href="" id="enter">Add to cart</a></div>
-                    </form>
-                </div>
+                <ul class="nav-right">
+                    <li id="menu-icon"><a  href="#" onclick="showList(); return false" ><img src="images/menu-icon.gif"></a></li>
+                    <li id="home"><a  href="index.html" >Home</a></li>
+                    <li id="signup"><a href="index.html" >Sign up</a></li>
+                    <li id="login"><a  href="" >Log in</a></li>
+                </ul>
+            </nav>
+            <div class="food-type">
+                <ul>
+                    <li><a>Drinks</a></li>
+                    <li><a>Swallows</a></li>
+                    <li><a>Snacks</a></li>
+                    <li><a>Meat</a></li>
+                </ul>
             </div>
-
-       </div>
-        
             
-        <footer>
-            <span>darotfoods</span>
-        </footer>
+        </div>
+    
     </section>
-    
-    
+    <footer>
+        darot &copy;
+    </footer>
     <script src="js/order.js">
     </script>
 </body>

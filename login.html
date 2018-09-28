@@ -25,7 +25,7 @@
             <div class="login-avatar">
             <img src="./images/account.gif" alt="avatar">
             </div>
-            <div class="form-wrapper" id="wrap">
+            <div class="form-wrapper" id="form-wrap1">
                 <form>
                     <label id="username-label">Username</label><br>
                     <input type="text" placeholder="username" id="username" class="input">
@@ -33,7 +33,22 @@
                     <input type="password" placeholder="Enter the password" id="password" class="input"><br>
                     <input type="checkbox" id="checkbox"><p id="checkbox-label">Remember me</p>
                     <div class="btn"><a href="user.html" id="enter">Log in</a></div>
+                    <div class="btn"><a href="#" id="signup-form1" onclick="showSignUp(); return false">Sign up</a></div>
                 </form>
+            </div>
+            <div class="form-wrapper" id="form-wrap2">
+                <form>
+                    <label id="username-label">Username</label><br>
+                    <input type="text" placeholder="username" id="username" class="input">
+                    <label id="password-label">Password</label>
+                    <input type="password" placeholder="Enter the password" id="password" class="input"><br>
+                    <label id="cpassword-label">Confirm password</label>
+                    <input type="password" placeholder="Enter the password" id="password" class="input"><br>
+                    <input type="checkbox" id="checkbox"><p id="checkbox-label">Remember me</p>
+                    <div class="btn"><a href="#" id="enter">Sign up</a></div>
+                    
+                </form>
+                <div class="btn"><a href="#" id="loginreturn" onclick="showLogin(); return false"> Back to Log in</a></div>
             </div>
         </section>
     </section>
@@ -42,7 +57,7 @@
     </footer>
     
     
-    <script src="js/index.js">
+    <script src="js/login.js">
     </script>
 </body>
 </html>
