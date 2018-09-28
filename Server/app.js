@@ -16,15 +16,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello World' });
 });
 
-app.get('/api/v1/orders', router);
-
-app.get('/api/v1/orders/:id', router);
-
-app.post('/api/v1/orders', router);
-
-app.put('/api/v1/orders/:id', router);
-
-app.delete('/api/v1/orders/:id', router);
+app.use(router);
 
 
 app.listen(PORT, () => {
