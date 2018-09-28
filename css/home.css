@@ -1,434 +1,280 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+html, body{
+    margin:0 auto;
+    padding:0;
+    display: table;
+    height: 100%;
+    width:90%;
 }
 
-.bigwrapper{
-    display: grid;
-    width:100%;
-    height: 800px;;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "nav nav"
-                         "banner signup"
-                         "display display"
-                         "orderstep orderstep"
-                         "footer footer";
 
+@font-face{
+    font-family: "myfont";
+    src: url(font/SPINC___.TTF);
+    font-family: "abel-regular";
+    src: url(font/Abel-Regular.ttf)
 }
-
-a{
+a, ul{
     text-decoration: none;
-    cursor: pointer;
-}
-ul{
     list-style-type: none;
 }
-
-.navsetting{
-    grid-area: nav;
+.container{
+    padding: 0px;
+    height: auto;
 }
 
-.navbar{
-    width: 100%;
-    height: 40px;
-    background-color: red;
-}
-.navbar{
-    width: 100%;
-    height: 40px;
-    background-color: red;
-}
-
-.navbar ul{
-    
-    font-size: 14px;
-}
-
-.navbar ul li{
-   display: inline-block;
-}
-
-.navbar ul li a{
-    color: white;
- }
-
- #arrow{
-     font-weight: 50px;
-     font-size: 40px;
-     float: right;
-     line-height: .8em;
-     cursor: pointer;
- }
-
- 
-#signup{
-    line-height: 3em;
-}
-
-#signin{
-    line-height: 3em;
-}
-
-#sidebar{
-    width:15%;
-    height:120px;
-    background-color:#FFF799;
-    float: right;
-    position: absolute;
-    top:6%;
-    right: 0%;
-    display: none;
-    z-index: 11;
-}
-#sidebardiv{
-    margin: 10px auto;
-    text-align: center;
-    line-height: 2em;
-}
-.sidebaroptions{
-    display: block;
-    font-size: 14px;
-}
-
-.signupform{
-    grid-area: signup;
-    grid-column: 2/3;
-    width: 350px;
-    height:400px;
-    background-color:grey;
-    float:right;
-    margin-right:0px;
-    margin-top: 0px;
-    border-radius: 5px;
-    
-}
-
-.signupform .wrapper{
-    width: 80%;
-    height:90%;
-    margin: 20px auto;
-    
-}
-.wrapper input{
-    width:100%;
-    height:50px;
-    margin: 20px auto;
-}
-
-.btn{
-    width:100px;
-    height: 30px;
-    padding: 10px;
-    background-color: purple;
-    margin: 20px auto;
-    text-align: center;
-    line-height: 2em;
-    font-weight:30px;
-    
-}
-
-.btn a{
-    display: block;
-    color: white;
-}
-
-.btn:hover, .btn a:hover{
-    background-color: green;
-    color: white;
-}
 .banner{
-    grid-area: banner;
-    grid-column: 1/3;
-    grid-row: 3;
-    width:100%;
-    height: 430px;
-    background-color: #FFF799;
-    position: relative;
-    z-index: 10;
-}
-
-.banner #image{
-    display: grid;
-    width:60%;
-    position: relative;
-    margin: 0 auto;
-    
-}
-img{
-    width:200px;
-    height: 160px;
-    margin: 0 auto;
-}
-
-.banner div p{
-    margin-top: 20px;
-    font-size:24px;
-    text-align: center;
-    font-weight:bold;
-}
-
-#order{
-    background-color: red;
-    margin-top: 30px;
-    width:200px;
-    height: 50px;
-}
-
-#orderLink{
-    line-height: 2.5em;
-    color: #FFF799;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#order:hover, #order a:hover{
-    background-color: #F19A82;
-    color: white;
-}
-
-.displayFood{
-    grid-area: display;
-    width:100%;
-    height: 400px;
-    background-color: white;
-    margin: 450px auto 490px auto;
-}
-
-.displayFood #fooditems{
-    display: grid;
-    width:100%;
-    margin: 10px auto;
-    text-align: center;
-    justify-content: center;
-    
-}
-
-#fooditems span{
-    display: grid;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.orderstep{
-    grid-area: orderstep;
     width: 100%;
-    height: 950px;
-    margin: 10px auto;
-    margin-bottom: 0px;
-    background-color: #FFF799;
+    height: 550px;
+    background-image: url('../images/banner-cover.jpg');
+    background-size: cover;
+    background-position: center;
 }
-
-.orderstep #orderstep{
-    display: grid;
-    grid-template-columns: 1fr;
-    width:100%;
-    margin: 0px auto;
-    text-align: center;
-    justify-content: center;
-    
-}
-
-#orderstep #orderhead{
-    width: 100%;
-    height:50px;
-    line-height: 3em;
-    background-color: red;
-    margin-top: 0px;
-}
-
-
-
-#orderstep span{
-    display: grid;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-
-
-#orderstep span img{
-    margin-top: -15px;
-    margin-bottom: 15px;
-
-}
-
-
-footer{
-    grid-area: footer;
+.navbar{
     width: 100%;
     height: 80px;
-    margin-bottom: -150px;
-    background-color: red;
+    background-color: transparent;
+    margin: -20px auto;
+}
+
+
+.nav-left{
+    width:180px;
+    height: 70px;
+    float: left;
+}
+.nav-left .logo{
+    width: 100%;
+    height:100%;
     text-align: center;
+    background-color: #b3423b;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.nav-left h1{
+    font-size: 20px;
+    text-align: center;
+    font-family: "myfont", sans-serif;
+    color: white;
+    margin-top: 35px;
+}
+.nav-right{
+    float: right;
+}
+.nav-right #home, .nav-right #login, .nav-right #signup{
+    display: none;
+}
+.nav-right #menu-icon{
+    width:50px;
+}
+.nav-right #menu-icon a{
+    display: block;
+}
+
+.nav-right #menu-icon img{
+    width: 30px;
+    margin: 20px auto;
+}
+
+.menu-list{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    display: none;
+}
+
+.menu-list #menu-header{
+    width: 100%;
+    height:60px;;
+    background-color: #b3423b;
+}
+
+.menu-list #menu-header-img{
+    width: 50px;
+    margin-top:10px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.menu-list #menu-list-header{
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-left: 70px;
+    position: absolute;
+    color: white;
+    font-family: "myfont";
+}
+
+.menu-list #close{
+    display: inline-block;
+    font-size: 20px;
+    text-transform: uppercase;
+    float: right;
+    margin-top: 20px;
+    color: white;
+    font-family: myfont;
+}
+.menu-list #close:hover{
+    cursor: pointer;
+    font-size: 22px;
+}
+.menu-list li{
+    padding: 15px;
+    border-bottom: 2px solid lightgray;
+    display: block;
+    margin-left: -40px;
+    font-family: myfont;
+}
+.menu-list img{
+    width: 40px;
+}
+
+.menu-list #close{
+    float: right;
+    margin-right: 10px;
+}
+
+.banner-text{
+    width: 50%;
+    height: auto;
+    margin: 60px auto;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.banner-text h2{
+    text-align: center;
+    font-family: abel-regular;
+    font-size: 40px;
+}
+.banner-search-box{
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, .6);
+}
+.banner-search-box input{
+    width: 70%;
+    height: 50px;
+}
+h3{
+    text-align: center;
+    font-family: abel-regular;
+    color: black;
+    font-size: 20px;
+}
+.btn{
+    width:28%;
+    height: 54px;
+    background-color:rgba(0, 0, 0, .6);
+    display: inline-block;
+    float: right;
+    text-align: center;
+    line-height: 3em;
+}
+.btn a{
+    color: white;
+}
+
+.orderflowheader{
+    width: 100%;
+    height: 60px;
+    background-color: #b3423b;
+    line-height: 3.5em;
+    margin-top: -21px;
+    
+}
+
+.orderflowheader h3{
+    color: white;
+}
+.slides-container{
+    width: 80%;
+    height: auto;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    margin-left: 35px;
+    margin-top: 40px;
+}
+.slides{
+    display: none;
+}
+.slide-number{
+    position: absolute;
+    padding: 8px 12px;
+    color:#b3423b;
+}
+.slide-caption{
+    text-align: center;
+    font-size:14px;
+    padding: 8px 16px;
+}
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+.next{
+    right:0;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mobile-app-ad{
+    width: 100%;
+    height: 250px;
+    background-image: url('../images/phonefood1.jpg');
+    background-size:cover;
+    background-position: center;
+    margin-top: 35px;
+    display: grid;
+    justify-content: center;
+}
+
+.mobile-app-ad h3{
+    font-size: 24px;
+    background-color:rgba(0, 0, 0, 0.8); 
+    color: white;
+    padding: 10px;
+}
+
+.mobile-app-ad #h3{
+    margin-top: -10px;
+}
+
+footer{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    margin-top: 30px;
+    background-color: black;
+    color: white;
     line-height: 5em;
+    display: table-row;
 }
 
-@media only screen and (max-width:641px){
-    .signupform{
-        display:none;
-        
-    }
-    #signin{
-        line-height: 3em;
-        display: none;
-    }
-
-    #sidebar{
-        width:40%;
-        
-    }
-    #home{
-        line-height: 3em;
-        display: none;
-    }
-    #orderstep span img{
-        width:150px;
-    
-    }
-
-    .displayFood{
-        margin-top: 420px;
-    }
-}
-
-@media only screen and (min-width:642px){
-    .bigwrapper{
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "nav nav"
-                            "signup signup"
-                            "banner banner"
-                            "display display"
-                            "orderstep orderstep"
-                            "footer footer";
-
-    }
-    #signup{
-        display: none;
-    }
-
-  
-
-    #home{
-        line-height: 3em;
-        display: none;
-    }
-
-    .banner{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: 480px;
-        
-    }
-
-    .banner #image{
-        display: grid;
-        width:60%;
+@media only screen and (min-width:1026px){
+    .slides-container{
+        width: 80%;
+        height: auto;
         position: relative;
-        margin: 35px auto;
-        
-    }
-    img{
-        width:200px;
-        height: 160px;
-        margin: 0 auto;
-    }
-    
-    .banner div p{
-        margin-top: 20px;
-        font-size:24px;
-        text-align: center;
-        font-weight:bold;
-    }
-    #order{
-        grid-row:2;
-        margin-top: 0px;
-    }
-    .signupform{
-        
-        margin-top: -330px;
-       
-        
-    }
-    .displayFood{
-        grid-area: display;
-        width:100%;
-        height: 900px;
-        background-color: white;
-        margin: 40px auto -400px auto;
-    }
-    .displayFood #fooditems{
         display: grid;
-        width:100%;
-        margin: 10px auto;
-        text-align: center;
-        grid-template-columns: 1fr 1fr;
-        
+        justify-content: center;
+        margin: 40px auto;
     }
-    .displayFood #fooditems img{
-       width: 300px;
-       height:200px;
-        
+    .slides-container .slides{
+        width: 90%;
     }
-}
-
-@media only screen and (min-width:968px){
-    .banner{
-        height: 570px;
-        background-image: url("../images/food1.jpg");
-        background-repeat: no-repeat;
-        background-size: 1500px 600px;
-    }
-    .banner div p{
-        margin-top: 20px;
-        font-size:38px;
-        color:white;
-        text-shadow: #000 0px 3px 4px;
+    .slides-container .slides img{
+        width: 250px;
     }
 
-    .displayFood{
-        grid-area: display;
-        width:100%;
-        height: 1150px;
-        
-    }
-
-    .displayFood #fooditems img{
-        width: 500px;
-        height:300px;
-         
-     }
-
-     .orderstep{
-        
-        width: 100%;
-        height: 600px;
-        margin: 10px auto;
-        margin-bottom: 0px;
-        background-color: #FFF799;
-    }
-
-     .orderstep #orderstep{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        width:100%;
-
-    }
-    .orderstep #orderstep #orderhead{
-        grid-column: 1/4;
-    }
-    .orderstep #orderstep h2{
-        grid-column: 1/4;
-        margin-top:50px;
-        margin-bottom: 30px;
-    }
-
-   
-
-
-    .signupform{
-       margin-left:150px;
-       margin-bottom:90px;
+    .slide-caption{
+        font-size: 20px;
         
     }
 }

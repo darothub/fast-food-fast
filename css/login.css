@@ -5,7 +5,7 @@ html, body{
     width:100%;
 }
 body{
-    background-image: url('../images/food2.jpg');
+    background-image: url('../images/bannercover3.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -131,7 +131,7 @@ a{
 }
 
 .btn{
-    width:40px;
+    width:auto;
     height: 15px;
     padding: 10px;
     background-color:black;
@@ -157,9 +157,17 @@ footer{
     line-height: 4em;
 }
 
+#form-wrap2{
+    display: none;
+}
+
+#return-to-login{
+
+}
+
 @media only screen and (min-width:768px){
     body{
-        background-image: url('../images/food2.jpg');
+       
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -188,7 +196,7 @@ footer{
 }
 @media only screen and (min-width:1023px){
     body{
-        background-image: url('../images/food2.jpg');
+        
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -233,9 +241,8 @@ footer{
 }
 @media only screen and (min-width:1026px){
     body{
-        background-image: url('../images/food2.jpg');
-        background-size: cover;
-        background-position: center;
+        background-color: rgba(0,0,0, 0.6);
+        background-size: contain;
         background-repeat: no-repeat;
     }
     .loginform{
