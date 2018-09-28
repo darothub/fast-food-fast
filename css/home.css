@@ -127,7 +127,7 @@ a, ul{
     border-bottom: 2px solid lightgray;
     display: block;
     margin-left: -40px;
-    font-family: "myfont";
+    font-family: myfont;
 }
 .menu-list img{
     width: 40px;
@@ -287,4 +287,5 @@ footer{
     .btn{
         width:29%;
     }
+
 }
