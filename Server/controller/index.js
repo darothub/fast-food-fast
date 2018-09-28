@@ -13,7 +13,7 @@ const getOrderById = (req, res) => {
   res.status(200).send({ message: 'Success', result: order });
 };
 
-const createOrder = (req, res) => {
+const createOrder = (req, res) => {  
   if (!req.body.name) {
     return res.status(400).send({ name: false, message: 'name is required' });
   }
@@ -24,14 +24,10 @@ const createOrder = (req, res) => {
     return res.status(400).send({ designation: false, message: 'designation is required' });
   }
 
-  if (!req.body.quantity) {
-    return res.status(400).send({ quantity: false, message: 'quantity is required' });
-  }
-
   if (!req.body.price) {
     return res.status(400).send({ price: false, message: 'price is required' });
   }
-  const newOrder = {
+   const newOrder = {
     id: orders.length + 1,
     name: req.body.name,
     date: new Date().toJSON().slice(0, 10).replace(/-/g, '-'),
