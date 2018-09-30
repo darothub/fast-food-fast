@@ -24,10 +24,6 @@ const createOrder = (req, res) => {
     return res.status(400).send({ designation: false, message: 'designation is required' });
   }
 
-  if (!req.body.quantity) {
-    return res.status(400).send({ quantity: false, message: 'quantity is required' });
-  }
-
   if (!req.body.price) {
     return res.status(400).send({ price: false, message: 'price is required' });
   }
@@ -43,7 +39,7 @@ const createOrder = (req, res) => {
     status: 'pending',
   };
   orders.push(newOrder);
-  return res.status(200);
+  return res.status(200).send(newOrder);
 };
 const updateOrder = (req, res) => {
   const order = orders.find(element => element.id === parseInt(req.params.id, 10));
