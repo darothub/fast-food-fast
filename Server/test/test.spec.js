@@ -2,7 +2,7 @@ import chai, { expect, assert } from 'chai';
 
 import chaiHttp from 'chai-http';
 
-import orders from '../db/db';
+import orders from '../dummydb/db';
 
 import server from '../app';
 

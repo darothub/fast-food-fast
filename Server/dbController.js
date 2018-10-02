@@ -1,5 +1,4 @@
-import pool from './model/config';
-
+import pool from './model/database';
 
 const getAll = (req, res) => {
   const query = {
@@ -7,8 +6,8 @@ const getAll = (req, res) => {
     values: ['brianc', 'brian.m.carlson@gmail.com'],
   };
   pool.query(query)
-    .then(user = res.status(200).send(user.rows))
-    .catch(e => setImmediate(() => { throw e }))
+    .then(user => res.status(200).send(user.rows))
+    .catch(e => setImmediate(() => { throw e; }));
 };
 
 export default getAll;

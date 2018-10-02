@@ -1,4 +1,4 @@
-import orders from '../db/db';
+import orders from '../dummydb/db';
 
 const getAllOrders = (req, res) => {
   res.status(200).send({ message: 'Success', result: orders });

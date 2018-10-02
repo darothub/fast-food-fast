@@ -3,11 +3,12 @@ CREATE DATABASE fast_food_fast;
 \c fast_food_fast
 CREATE TABLE users(
     username VARCHAR NOT NULL,
-    email VARCHAR NOT NULL 
+    email VARCHAR NOT NULL,
+    pass VARCHAR NOT NULL
 );
 INSERT INTO users VALUES 
-    ('darot', 'darotudeen@gmail.com'),
-    ('amoke', 'amoke@gmail.com');
+    ('darot', 'darotudeen@gmail.com', 'okbakassi'),
+    ('amoke', 'amoke@gmail.com', 'alonge');
 
 CREATE TABLE hot100(
     rant int,

@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello World' });
 });
 
-app.use(router);
 
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
