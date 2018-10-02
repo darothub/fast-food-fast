@@ -1,6 +1,5 @@
 import pool from './model/database';
 
-
 const getAll = (req, res) => {
   const query = {
     text: 'SELECT * FROM users',
