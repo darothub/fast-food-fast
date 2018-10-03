@@ -20,7 +20,7 @@ const placeOrder = (req, res) => {
     .then(order => res.status(200).send({ message: 'Your order is successful', data: order.rows[0], decoded }));
 };
 
-const getUserOrder = (req, res) => {
+const getUserOrderHist = (req, res) => {
   const decoded = jwt.verify(req.token, config.secretkey);
   const reqQuery = {
     text: 'SELECT * FROM users WHERE id=$1',
@@ -72,6 +72,6 @@ const getAllorders = (req, res) => {
     })
     .catch(err => res.status(500).send({ message: err.message }));
 };
-const userOrders = { placeOrder, getUserOrder, getAllorders };
+const userOrders = { placeOrder, getUserOrderHist, getAllorders };
 
 export default userOrders;
