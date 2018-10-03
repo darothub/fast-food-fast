@@ -30,4 +30,6 @@ router.get('/users/:id/orders', checkAuth, users.getUserOrderHist);
 
 router.get('/orders', checkAuth, users.getAllorders);
 
+router.get('/orders', checkAuth, users.getAllorders);
+
 export default router;
