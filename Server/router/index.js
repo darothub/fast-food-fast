@@ -28,4 +28,6 @@ router.post('/orders', checkAuth, users.placeOrder);
 
 router.get('/users/:id/orders', checkAuth, users.getUserOrder);
 
+router.get('/orders', checkAuth, users.getAllorders);
+
 export default router;
