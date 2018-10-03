@@ -37,7 +37,7 @@ const getUserOrder = (req, res) => {
       }
       return pool.query(updateQuery)
         .then((order) => {
-          if (!order) {
+          if (user.rows[0].email !== decoded.email) {
             return res.status(400).send('Not found');
           }
           return res.status(200).send(order.rows);
@@ -47,7 +47,7 @@ const getUserOrder = (req, res) => {
     .catch(err => res.status(500).send({ message: err.message }));
 };
 
-const getAllorders =(req, res)=> {
+const getAllorders = (req, res) => {
   const decoded = jwt.verify(req.token, config.secretkey);
   const reqQuery = {
     text: 'SELECT * FROM users WHERE roles=$1',
@@ -57,21 +57,21 @@ const getAllorders =(req, res)=> {
     text: 'SELECT * FROM orders',
   };
   return pool.query(reqQuery)
-  .then((user) => {
-    if (user.rowCount === 0) {
-      return res.status(404).send({ message: 'Admin not found' });
-    }
-    return pool.query(resQuery)
-    .then(orders =>{
-      if(!orders.rows){
-        res.status(204).send({ message: 'No order is found'})
+    .then((user) => {
+      if (user.rowCount === 0) {
+        return res.status(404).send({ message: 'Admin not found' });
       }
-      res.status(200).send(orders.rows);
+      return pool.query(resQuery)
+        .then((orders) => {
+          if (!orders.rows) {
+            res.status(204).send({ message: 'No order is found' });
+          }
+          res.status(200).send(orders.rows);
+        })
+        .catch(err => res.status(500).send({ message: err.message }));
     })
     .catch(err => res.status(500).send({ message: err.message }));
-    }
-  })
-  
-const userOrders = { placeOrder, getUserOrder };
+};
+const userOrders = { placeOrder, getUserOrder, getAllorders };
 
 export default userOrders;
