@@ -1,41 +1,41 @@
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import pool from '../../model/database';
-
+import config from '../../model/config';
 
 const validUser = (user) => {
-  const validUsername = typeof user.username === 'string'
-                                      && user.username.trim() !== '';
-  const validEmail = typeof user.email === 'string'
-                                      && user.email.trim() !== '';
+  const regexp = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/);
+
+  const validEmail = regexp.test(user.email);
   const validPassword = typeof user.password === 'string'
                                       && user.password.trim() !== ''
                                       && user.password.trim().length >= 6;
-  return validUsername && validEmail && validPassword;
+  return validEmail && validPassword;
 };
 
 const signup = (req, res) => {
   const { username, email, password } = req.body;
-  const tquery = {
+  const reqQuery = {
     text: 'SELECT * FROM users WHERE email=$1',
     values: [email],
   };
-  const query = {
+  const resQuery = {
     text: 'INSERT INTO users(username, email, pass) VALUES($1, $2, $3) RETURNING *',
     values: [username, email, bcrypt.hashSync(password, 10)],
   };
   if (!validUser(req.body)) {
     return res.status(400).send({ message: 'input correct details' });
   }
-  return pool.query(tquery)
+  return pool.query(reqQuery)
     .then((data) => {
       if (data.rowCount === 1) {
         return res.status(400).send({
           message: 'User already exist',
         });
       }
-      return pool.query(query)
+      return pool.query(resQuery)
         .then(user => res.status(201).send({
-          message: 'Created', user,
+          message: 'Created', user: user.rows[0],
         }))
         .catch(e => res.send(e));
     })
@@ -56,16 +56,17 @@ const signin = (req, res) => {
       if (data.rowCount === 0) {
         return res.status(404).send({ message: 'user not found' });
       }
-      return (bcrypt.compare(req.body.password, data.rows[0].pass))
-        .then((value) => {
-          if (value) {
-            return res.status(200).send({
-              email: req.body.email,
-              message: 'You have signed in successfully',
-            });
-          }
-          return res.status(409).send({ message: 'invalid username/password' });
+      if (bcrypt.compare(req.body.password, data.rows[0].pass)) {
+        const token = jwt.sign({
+          id: data.rows[0].id,
+          email: data.rows[0].email,
+          roles: data.rows[0].roles,
+        }, config.secretkey, {
+          expiresIn: '1h',
         });
+        return res.status(200).send({ token, message: 'You have signed in successfully' });
+      }
+      return res.status(409).send({ message: 'invalid username/password' });
     })
     .catch(e => res.send(e));
 };
