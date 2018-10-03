@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import pool from '../../model/database';
-import config from '../../model/config';
+import pool from '../model/database';
+import config from '../model/config';
 
 const validUser = (user) => {
   const regexp = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/);

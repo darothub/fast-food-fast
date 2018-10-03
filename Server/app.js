@@ -4,6 +4,10 @@ import bodyParser from 'body-parser';
 
 import router from './router/index';
 
+import userRouter from './router/userRouter';
+
+import orderRouter from './router/orderRouter';
+
 const app = express();
 
 app.use(express.json());
@@ -18,6 +22,8 @@ app.get('/', (req, res) => {
 
 
 app.use(router);
+app.use(userRouter);
+app.use(orderRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
