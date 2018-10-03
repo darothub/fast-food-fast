@@ -26,7 +26,7 @@ router.post('/auth/signin', User.signin);
 
 router.post('/orders', checkAuth, users.placeOrder);
 
-router.get('/users/:id/orders', checkAuth, users.getUserOrder);
+router.get('/users/:id/orders', checkAuth, users.getUserOrderHist);
 
 router.get('/orders', checkAuth, users.getAllorders);
 
