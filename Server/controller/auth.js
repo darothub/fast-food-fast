@@ -4,13 +4,12 @@ import pool from '../model/database';
 import config from '../model/config';
 
 const validUser = (user) => {
-  const regexp = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/);
-
-  const validEmail = regexp.test(user.email);
-  const validPassword = typeof user.password === 'string'
-                                      && user.password.trim() !== ''
-                                      && user.password.trim().length >= 6;
-  return validEmail && validPassword;
+  const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(user.email);
+  const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(user.password);
+  const validUsername = typeof user.validUsername === 'string'
+                                      && user.username.trim() !== ''
+                                      && user.username.trim().length >= 6;
+  return validEmail && validPassword && validUsername;
 };
 
 const signup = (req, res) => {
@@ -24,18 +23,27 @@ const signup = (req, res) => {
     values: [username, email, bcrypt.hashSync(password, 10)],
   };
   if (!validUser(req.body)) {
-    return res.status(400).send({ message: 'input correct details' });
+    return res.status(400).send({ message: 'Invalid email/password' });
   }
   return pool.query(reqQuery)
     .then((data) => {
       if (data.rowCount === 1) {
-        return res.status(400).send({
+        return res.status(409).send({
           message: 'User already exist',
         });
       }
+      const token = jwt.sign({
+        id: data.rows[0].id,
+        email: data.rows[0].email,
+        roles: data.rows[0].roles,
+      }, config.secretkey, {
+        expiresIn: '24h',
+      });
       return pool.query(resQuery)
         .then(user => res.status(201).send({
-          message: 'Created', user: user.rows[0],
+          token,
+          message: 'Created',
+          user: user.rows[0],
         }))
         .catch(e => res.send(e));
     })
@@ -49,14 +57,14 @@ const signin = (req, res) => {
     values: [req.body.email],
   };
   if (!validUser(req.body)) {
-    return res.status(400).send({ message: 'input correct details' });
+    return res.status(400).send({ message: 'Invalid email/password' });
   }
   return pool.query(selQuery)
     .then((data) => {
       if (data.rowCount === 0) {
-        return res.status(404).send({ message: 'user not found' });
+        return res.status(404).send({ message: 'User not found' });
       }
-      if (bcrypt.compare(req.body.password, data.rows[0].pass)) {
+      if (bcrypt.compareSync(req.body.password, data.rows[0].pass)) {
         const token = jwt.sign({
           id: data.rows[0].id,
           email: data.rows[0].email,
@@ -66,7 +74,7 @@ const signin = (req, res) => {
         });
         return res.status(200).send({ token, message: 'You have signed in successfully' });
       }
-      return res.status(409).send({ message: 'invalid username/password' });
+      return res.status(401).send({ message: 'Unauthorised access' });
     })
     .catch(e => res.send(e));
 };

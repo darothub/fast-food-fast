@@ -19,9 +19,9 @@ const placeOrder = (req, res) => {
   return pool.query(reqQuery)
     .then((order) => {
       if (req.body.email !== decoded.email) {
-        return res.status(403).send('Not Allowed');
+        return res.status(401).send('Unuathorised access');
       }
-      return res.status(200).send({ message: 'Your order is successful', data: order.rows[0], decoded });
+      return res.status(200).send({ message: 'Your order is successful', data: order.rows[0] });
     });
 };
 
