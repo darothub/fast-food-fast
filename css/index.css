@@ -27,7 +27,7 @@ a{
     float: left;
     margin-left:-20px;
     margin-top: 10px;
-    display: block;
+    display: none;
 }
 .navbar{
     width: 100%;
@@ -37,27 +37,31 @@ a{
 }
 
 .nav-right{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position:-webkit-sticky;
-    position:sticky;
-    width: 200px;
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.5);
     float: right;
+    text-align: center;
 }
-.nav-right li {
+
+.nav-right ul{
+    width: 100%;
     display: inline-block;
-    margin-left: 10px;  
+    margin: 0 auto;
+    padding: 10px;
 }
-.nav-right li a{
-    display: block;
+.nav-right ul li{
+    width: 100%;
+    display: inline;
+    margin:auto 5px;
+    padding: 10px;
+}
+.nav-right ul li a {
+    display: inline-block;
+    padding: 10px;
     color: #BB4410;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 5em;
-    
 }
+
 
 .nav-right li a:hover{
     background-color: #f5af4f;
@@ -141,6 +145,30 @@ footer{
         top: 25%;
         left: 60%;
         
+    }
+    .nav-right{
+        width: 50%;
+        margin-top: 10px;
+        float: right;
+        text-align: center;
+    }
+    
+    .nav-right ul{
+        width: 100%;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .nav-right ul li{
+        width: 100%;
+        display: inline;
+        margin:auto 5px;
+        padding: 10px;
+    }
+    .nav-right ul li a {
+        display: inline-block;
+        padding: 10px;
+        color: #BB4410;
     }
     .btn{
         margin-top: 20px;
