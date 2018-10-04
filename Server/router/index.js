@@ -4,15 +4,15 @@ import controllers from '../controller/index';
 
 const router = express.Router();
 
-router.get('/api/v1/orders', controllers.getAllOrders);
+router.get('/orders', controllers.getAllOrders);
 
-router.get('/api/v1/orders/:id', controllers.getOrderById);
+router.get('/orders/:id', controllers.getOrderById);
 
-router.post('/api/v1/orders', controllers.createOrder);
+router.post('/orders', controllers.createOrder);
 
-router.put('/api/v1/orders/:id', controllers.updateOrder);
+router.put('/orders/:id', controllers.updateOrder);
 
-router.delete('/api/v1/orders/:id', controllers.deleteOrder);
+router.delete('/orders/:id', controllers.deleteOrder);
 
 
 export default router;

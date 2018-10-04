@@ -32,19 +32,22 @@ const signup = (req, res) => {
           message: 'User already exist',
         });
       }
-      const token = jwt.sign({
-        id: data.rows[0].id,
-        email: data.rows[0].email,
-        roles: data.rows[0].roles,
-      }, config.secretkey, {
-        expiresIn: '24h',
-      });
       return pool.query(resQuery)
-        .then(user => res.status(201).send({
-          token,
-          message: 'Created',
-          user: user.rows[0],
-        }))
+        .then((user) => {
+          if (user) {
+            const token = jwt.sign({
+              id: user.rows[0].id,
+              email: user.rows[0].email,
+              roles: user.rows[0].roles,
+            }, config.secretkey, {
+              expiresIn: '24h',
+            });
+            res.status(201).send({
+              message: 'User Created',
+              token,
+            });
+          }
+        })
         .catch(e => res.send(e));
     })
     .catch(e => res.send(e));
