@@ -62,7 +62,7 @@ const signin = (req, res) => {
           email: data.rows[0].email,
           roles: data.rows[0].roles,
         }, config.secretkey, {
-          expiresIn: '1h',
+          expiresIn: '24h',
         });
         return res.status(200).send({ token, message: 'You have signed in successfully' });
       }

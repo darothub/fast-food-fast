@@ -99,9 +99,38 @@ const getOrderById = (req, res) => {
     })
     .catch(err => res.status(500).send({ message: err.message }));
 };
-const userOrders = {
-  placeOrder, getUserOrderHist, getAllorders, getOrderById,
+
+const updateOrderStatus = (req, res) => {
+  const decoded = jwt.verify(req.token, config.secretkey);
+  const reqQuery = {
+    text: 'SELECT * FROM users WHERE roles=$1',
+    values: [decoded.roles],
+  };
+
+  // const resQuery = {
+  //   text: 'SELECT * FROM orders WHERE id=$1',
+  //   values: [req.params.id],
+  // };
+
+  const resQuery = {
+    text: 'UPDATE orders SET order_status=$1 WHERE id=$2 RETURNING *',
+    values: [req.body.order_status, req.params.id],
+  };
+  return pool.query(reqQuery)
+    .then((user) => {
+      if (user.rowCount === 0) {
+        return res.status(404).send({ message: 'Admin not found' });
+      }
+      if (req.body.order_status === '' || req.body.order_status === undefined) {
+        return res.status(400).send({ message: 'No change is made' });
+      }
+      return pool.query(resQuery)
+        .then(order => res.status(200).send({ message: `order_status ${order.rows[0].order_status} is updated` }));
+    });
 };
 
+const userOrders = {
+  placeOrder, getUserOrderHist, getAllorders, getOrderById, updateOrderStatus,
+};
 
 export default userOrders;
