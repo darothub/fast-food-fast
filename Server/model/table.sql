@@ -8,11 +8,11 @@ CREATE TABLE users(
     username VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     pass VARCHAR NOT NULL,
-    roles VARCHAR NULL,
+    roles VARCHAR DEFAULT 'Regular',
     created_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-INSERT INTO users VALUES (1,'darot', 'darotudeen@gmail.com', 'okbakassi', 'Admin'),(2, 'amoke', 'amoke@gmail.com', 'alonge', 'Regular');
+--INSERT INTO users VALUES (1,'darot', 'darotudeen@gmail.com', 'Youngster1', 'Admin'),(2, 'amoke', 'amoke@gmail.com', 'Amokeone1', 'Regular');
 
 CREATE TABLE orders(
     id SERIAL PRIMARY KEY,
@@ -21,7 +21,6 @@ CREATE TABLE orders(
     quantity VARCHAR NULL,
     price INTEGER NOT NULL,
     email VARCHAR NOT NULL,
-    userId INTEGER REFERENCES users(id) ON UPDATE CASCADE,
     created_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
@@ -33,7 +32,6 @@ CREATE TABLE menu(
     food VARCHAR NOT NULL,
     price VARCHAR NOT NULL,
     food_image VARCHAR NOT NULL,
-    userId INT REFERENCES users(id) ON UPDATE CASCADE,
     created_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

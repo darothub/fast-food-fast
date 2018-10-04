@@ -13,14 +13,16 @@ const validUser = (user) => {
 };
 
 const signup = (req, res) => {
-  const { username, email, password } = req.body;
+  const {
+    username, email, password, roles,
+  } = req.body;
   const reqQuery = {
     text: 'SELECT * FROM users WHERE email=$1',
     values: [email],
   };
   const resQuery = {
-    text: 'INSERT INTO users(username, email, pass) VALUES($1, $2, $3) RETURNING *',
-    values: [username, email, bcrypt.hashSync(password, 10)],
+    text: 'INSERT INTO users(username, email, pass, roles) VALUES($1, $2, $3, $4) RETURNING *',
+    values: [username, email, bcrypt.hashSync(password, 10), roles],
   };
   if (!validUser(req.body)) {
     return res.status(400).send({ message: 'Invalid email/password' });

@@ -13,12 +13,15 @@ const getAllmenu = (req, res) => {
       }
       res.status(200).send(menu.rows);
     })
-    .catch(err => res.status(500).send({ message: err.message }));
+    .catch(err => res.status(500).send(err));
 };
 
 const addNewMenu = (req, res) => {
   const decoded = jwt.verify(req.token, config.secretkey);
-  const reqQuery = {
+  const selQuery = {
+    text: 'SELECT * FROM menu',
+  };
+  const insQuery = {
     text: 'INSERT INTO menu(food, price, food_image) VALUES($1, $2, $3) RETURNING *',
     values: [req.body.food, req.body.price, req.body.image],
   };
@@ -31,13 +34,19 @@ const addNewMenu = (req, res) => {
   if (!req.body.image) {
     return res.status(400).send({ message: 'Food image is essential' });
   }
-  return pool.query(reqQuery)
+  return pool.query(selQuery)
     .then((menu) => {
+      if (req.body.food === menu.rows[0].food) {
+        return res.status(409).send({ message: 'Menu already exist' });
+      }
       if (decoded.roles !== 'Admin') {
         return res.status(401).send({ Unauthorised: 'You are not an Admin' });
       }
-      return res.status(200).send({ message: 'Your menu post is successful', data: menu.rows[0] });
-    });
+      return pool.query(insQuery)
+        .then(newMenu => res.status(200).send({ message: 'Your menu post is successful', data: newMenu.rows[0] }))
+        .catch(e => res.send(e));
+    })
+    .catch(e => res.send(e));
 };
 
 export default { getAllmenu, addNewMenu };
