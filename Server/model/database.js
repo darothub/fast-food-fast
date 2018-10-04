@@ -6,7 +6,7 @@ const pool = new pg.Pool({
   database: 'fast_food_fast',
   password: null,
   port: 5432,
-  max: 10,
+  max: 15,
   idleTimeoutMillis: 30000,
 });
 

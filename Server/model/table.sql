@@ -12,7 +12,7 @@ CREATE TABLE users(
     created_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
---INSERT INTO users VALUES ('darot', 'darotudeen@gmail.com', 'okbakassi'),('amoke', 'amoke@gmail.com', 'alonge');
+INSERT INTO users VALUES (1, 'darot', 'darotudeen@gmail.com', 'okbakassi', 'Admin'),(2, 'amoke', 'amoke@gmail.com', 'alonge', 'Regular');
 
 CREATE TABLE orders(
     id SERIAL PRIMARY KEY,
@@ -33,7 +33,9 @@ CREATE TABLE menu(
     food VARCHAR NOT NULL,
     price VARCHAR NOT NULL,
     food_image VARCHAR NOT NULL,
-    userId INT REFERENCES users(id) ON DELETE CASCADE,
+    userId INT REFERENCES users(id) ON UPDATE CASCADE,
     created_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_At timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO menu VALUES(1, 'Amala', 'N1200', 'img.png');
