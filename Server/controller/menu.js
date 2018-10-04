@@ -23,7 +23,7 @@ const addNewMenu = (req, res) => {
     values: [req.body.food, req.body.price, req.body.image],
   };
   if (!req.body.food) {
-    return res.status(400).send({ message: 'food name is required' });
+    return res.status(400).send({ message: 'Food name is required' });
   }
   if (!req.body.price) {
     return res.status(400).send({ message: 'Price is required' });
@@ -34,9 +34,9 @@ const addNewMenu = (req, res) => {
   return pool.query(reqQuery)
     .then((menu) => {
       if (decoded.roles !== 'Admin') {
-        return res.status(403).send('Admin not found');
+        return res.status(401).send({ Unauthorised: 'You are not an Admin' });
       }
-      return res.status(200).send({ message: 'Your menu post is successful', data: menu.rows[0], decoded });
+      return res.status(200).send({ message: 'Your menu post is successful', data: menu.rows[0] });
     });
 };
 

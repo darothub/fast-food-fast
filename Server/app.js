@@ -22,11 +22,10 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello World' });
 });
 
-
-app.use(router);
-app.use(userRouter);
-app.use(orderRouter);
-app.use(menuRouter);
+app.use('api/v2', router);
+app.use('api/v1', userRouter);
+app.use('api/v1', orderRouter);
+app.use('api/v1', menuRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

@@ -6,10 +6,10 @@ import config from '../model/config';
 const validUser = (user) => {
   const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(user.email);
   const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(user.password);
-  const validUsername = typeof user.validUsername === 'string'
-                                      && user.username.trim() !== ''
-                                      && user.username.trim().length >= 6;
-  return validEmail && validPassword && validUsername;
+  // const validUsername = typeof user.validUsername === 'string'
+  //                                     && user.username.trim() !== ''
+  //                                     && user.username.trim().length >= 6;
+  return validEmail && validPassword;
 };
 
 const signup = (req, res) => {

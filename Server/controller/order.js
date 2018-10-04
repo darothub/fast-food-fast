@@ -38,12 +38,12 @@ const getUserOrderHist = (req, res) => {
   return pool.query(reqQuery)
     .then((user) => {
       if (user.rowCount === 0) {
-        return res.status(404).send({ message: 'user not found' });
+        return res.status(404).send({ message: 'User not found' });
       }
       return pool.query(updateQuery)
         .then((order) => {
           if (user.rows[0].email !== decoded.email) {
-            return res.status(400).send('Not found');
+            return res.status(404).send({ message: 'User email not found' });
           }
           return res.status(200).send(order.rows);
         })
@@ -64,12 +64,12 @@ const getAllorders = (req, res) => {
   return pool.query(reqQuery)
     .then((user) => {
       if (user.rowCount === 0) {
-        return res.status(404).send({ message: 'Admin not found' });
+        return res.status(401).send({ Unauthorised: 'You are not an Admin' });
       }
       return pool.query(resQuery)
         .then((orders) => {
           if (!orders.rows) {
-            res.status(204).send({ message: 'No order is found' });
+            res.status(404).send({ message: 'Request not found' });
           }
           res.status(200).send(orders.rows);
         })
@@ -91,12 +91,12 @@ const getOrderById = (req, res) => {
   return pool.query(reqQuery)
     .then((user) => {
       if (user.rowCount === 0) {
-        return res.status(404).send({ message: 'Admin not found' });
+        return res.status(401).send({ Unauthorised: 'You are not an Admin' });
       }
       return pool.query(resQuery)
         .then((order) => {
           if (order.rowCount === 0) {
-            return res.status(204).send({ order, message: 'No order is found' });
+            return res.status(404).send({ order, message: 'Request not found' });
           }
           return res.status(200).send(order.rows);
         })
@@ -124,10 +124,10 @@ const updateOrderStatus = (req, res) => {
   return pool.query(reqQuery)
     .then((user) => {
       if (user.rowCount === 0) {
-        return res.status(404).send({ message: 'Admin not found' });
+        return res.status(401).send({ Unauthorised: 'You are not an Admin' });
       }
       if (req.body.order_status === '' || req.body.order_status === undefined) {
-        return res.status(400).send({ message: 'No change is made' });
+        return res.status(400).send({ message: 'Bad request' });
       }
       return pool.query(resQuery)
         .then(order => res.status(200).send({ message: `order_status ${order.rows[0].order_status} is updated` }));
