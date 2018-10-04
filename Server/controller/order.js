@@ -17,7 +17,12 @@ const placeOrder = (req, res) => {
     return res.status(400).send({ message: 'dish or price can not be null' });
   }
   return pool.query(reqQuery)
-    .then(order => res.status(200).send({ message: 'Your order is successful', data: order.rows[0], decoded }));
+    .then((order) => {
+      if (req.body.email !== decoded.email) {
+        return res.status(403).send('Not Allowed');
+      }
+      return res.status(200).send({ message: 'Your order is successful', data: order.rows[0], decoded });
+    });
 };
 
 const getUserOrderHist = (req, res) => {
