@@ -8,6 +8,8 @@ import userRouter from './router/userRouter';
 
 import orderRouter from './router/orderRouter';
 
+import menuRouter from './router/menuRouter';
+
 const app = express();
 
 app.use(express.json());
@@ -24,6 +26,7 @@ app.get('/', (req, res) => {
 app.use(router);
 app.use(userRouter);
 app.use(orderRouter);
+app.use(menuRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
