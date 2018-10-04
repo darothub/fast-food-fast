@@ -12,4 +12,6 @@ router.get('/orders', checkAuth, users.getAllorders);
 
 router.get('/orders/:id', checkAuth, users.getOrderById);
 
+router.put('/orders/:id', checkAuth, users.updateOrderStatus);
+
 export default router;
