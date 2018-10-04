@@ -72,6 +72,36 @@ const getAllorders = (req, res) => {
     })
     .catch(err => res.status(500).send({ message: err.message }));
 };
-const userOrders = { placeOrder, getUserOrderHist, getAllorders };
+
+const getOrderById = (req, res) => {
+  const decoded = jwt.verify(req.token, config.secretkey);
+  const reqQuery = {
+    text: 'SELECT * FROM users WHERE roles=$1',
+    values: [decoded.roles],
+  };
+  const resQuery = {
+    text: 'SELECT * FROM orders WHERE id=$1',
+    values: [req.params.id],
+  };
+  return pool.query(reqQuery)
+    .then((user) => {
+      if (user.rowCount === 0) {
+        return res.status(404).send({ message: 'Admin not found' });
+      }
+      return pool.query(resQuery)
+        .then((order) => {
+          if (order.rowCount === 0) {
+            return res.status(204).send({ order, message: 'No order is found' });
+          }
+          return res.status(200).send(order.rows);
+        })
+        .catch(err => res.status(500).send({ message: err.message }));
+    })
+    .catch(err => res.status(500).send({ message: err.message }));
+};
+const userOrders = {
+  placeOrder, getUserOrderHist, getAllorders, getOrderById,
+};
+
 
 export default userOrders;

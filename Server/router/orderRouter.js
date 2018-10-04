@@ -10,4 +10,6 @@ router.post('/orders', checkAuth, users.placeOrder);
 
 router.get('/orders', checkAuth, users.getAllorders);
 
+router.get('/orders/:id', checkAuth, users.getOrderById);
+
 export default router;
