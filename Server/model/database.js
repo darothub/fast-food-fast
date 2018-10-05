@@ -9,7 +9,7 @@ const string = {
   password: null,
   port: 5432,
   max: 15,
-  idleTimeoutMillis: 30000,
+  idleTimeoutMillis: 300000,
 };
 
 if (process.env.NODE_ENV === 'production') {
