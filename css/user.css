@@ -32,10 +32,10 @@ ul{
 .nav{
     grid-area: nav;
     margin-top:10px;
-    width:100%;
+    width:90%;
     height: 80px;
     background-color:white;
-    border-bottom: 2px solid red;
+
     
 }
 .nav #left-nav{
@@ -49,7 +49,6 @@ ul{
     display: inline-block;
     font-size: 8px;
     text-transform: uppercase;
-    border-left: 2px solid red;
     margin-left: 0px;
     
 }
@@ -76,7 +75,7 @@ ul{
     grid-area: header;
     width: 100%;
     height: 80px;
-    background-color: red;
+    background-color: #b3423b;
     margin-top: 10px;
 }
 .header-left{
@@ -103,6 +102,10 @@ ul{
     line-height: 2em;
 }
 
+.header-right span img{
+    width: 30px;
+}
+
 .header-wrapper span a{
     color: white;
     display: block;
@@ -117,15 +120,15 @@ ul{
     grid-area: adminprofile;
     width: 95%;
     height: 200px;
-    background-color: #FFF799;
+    background-color: white;
     margin:10px auto;
 }
 
 .profilehead{
     width: 100%;
     height: 30px;
-    background-color: #FFF799;
-    border-bottom: 2px solid red;
+    background-color: white;
+    border-bottom: 2px solid #b3423b;
 }
 
 .profilehead h4{
@@ -173,7 +176,8 @@ ul{
     width: 70%;
     height: 200px;
     margin: 0 auto;
-    background-color: red;
+    background-color: #b3423b;
+    color: white;
 }
 
 
@@ -196,8 +200,9 @@ ul{
 .listhead{
     width: 100%;
     height: 30px;
-    background-color: red;
-    border-bottom: 2px solid grey
+    background-color: #b3423b;
+    border-bottom: 2px solid grey;
+    
     
 }
 
@@ -206,6 +211,7 @@ ul{
     line-height: 2em;
     text-transform: uppercase;
     margin-left: 5px;
+    color: white;
 }
 
 .list-header{
@@ -229,7 +235,7 @@ ul{
 }
 .list-details{
     width: 100%;
-    background-color: lightgray;
+    background-color: white;
 }
 .list-details ul{
     display: grid;
@@ -242,7 +248,7 @@ ul{
 #sidebar{
     width:40%;
     min-height:70%;
-    background-color: #FFF799;
+    background-color: white;
     float: right;
     position: absolute;
     top:33%;
@@ -267,7 +273,7 @@ footer{
     width: 100%;
     height: 50px;
     text-align: center;
-    background-color: red;
+    background-color: #b3423b;
     color: white;
     margin-top:50px;
 }
@@ -326,14 +332,14 @@ footer span{
         grid-template-areas: "date user designation dish drink qty status";
     }
     .list-details-container{
-        background-color: #FFF799;
+        background-color: white;
         min-height: 120px;
         width: 98%;
         margin-left: 5px;
     }
     .list-details{
         width: 100%;
-        background-color: lightgray;
+        background-color: white;
     }
     .list-details ul{
         display: grid;
@@ -376,7 +382,7 @@ footer span{
         width: 100%;
         height: 70px;
         text-align: center;
-        background-color: red;
+        background-color: #b3423b;
         color: white;
         margin-top:200px;
         margin-bottom: -170px;
@@ -422,7 +428,7 @@ footer span{
         }
         .list-details{
             width: 100%;
-            background-color: lightgray;
+            background-color: white;
         }
         .list-details ul{
             display: grid;
@@ -491,7 +497,7 @@ footer span{
         width: 100%;
         height: 70px;
         text-align: center;
-        background-color: red;
+        background-color: #b3423b;
         color: white;
         margin-top:400px;
         
