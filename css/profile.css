@@ -35,7 +35,7 @@ ul{
     width:100%;
     height: 80px;
     background-color:white;
-    border-bottom: 2px solid red;
+    
     
 }
 .nav #left-nav{
@@ -49,7 +49,6 @@ ul{
     display: inline-block;
     font-size: 8px;
     text-transform: uppercase;
-    border-left: 2px solid red;
     margin-left: 0px;
     
 }
@@ -76,7 +75,7 @@ ul{
     grid-area: header;
     width: 100%;
     height: 80px;
-    background-color: red;
+    background-color: #b3423b;
     margin-top: 10px;
 }
 .header-left{
@@ -109,6 +108,10 @@ ul{
     cursor: pointer;
 }
 
+.header-right span img{
+    width: 30px;
+}
+
 .header-wrapper span a:hover{
     font-weight: bold;
 }
@@ -117,15 +120,15 @@ ul{
     grid-area: adminprofile;
     width: 95%;
     height: 200px;
-    background-color: #FFF799;
+    background-color: white;
     margin:10px auto;
 }
 
 .profilehead{
     width: 100%;
     height: 30px;
-    background-color: #FFF799;
-    border-bottom: 2px solid red;
+    background-color: white;
+    border-bottom: 2px solid #b3423b
 }
 
 .profilehead h4{
@@ -173,7 +176,7 @@ ul{
     width: 70%;
     height: 200px;
     margin: 0 auto;
-    background-color: red;
+    background-color: #b3423b
 }
 
 
@@ -196,8 +199,8 @@ ul{
 .listhead{
     width: 100%;
     height: 30px;
-    background-color: #FFF799;
-    border-bottom: 2px solid red;
+    background-color: white;
+    border-bottom: 2px solid #b3423b;
     
 }
 
@@ -243,7 +246,7 @@ ul{
     min-width:70px;
     height: 20px;
     padding: 10px;
-    background-color: purple;
+    background-color: #b3423b;
     margin: 5px auto;
     text-align: center;
     line-height: 1em;
@@ -257,8 +260,8 @@ ul{
 }
 
 .btn:hover, .btn a:hover{
-    background-color: green;
-    color: white;
+    background-color: white;
+    color:#b3423b;
 }
 
 #sidebar{
@@ -312,15 +315,14 @@ ul{
 #add-items{
     width:100%;
     min-height: 250px;
-    background-color:grey;
+    background-color:#FFF799;
     position: absolute;
     top: 50%;
     bottom: 50%;
     right: 50%;
     left: 0%;
     text-align: center;
-    color: white;
-    opacity: .8;
+    color: #b3423b;
     display: none;
     
 }
@@ -362,7 +364,7 @@ footer{
     width: 100%;
     height: 50px;
     text-align: center;
-    background-color: red;
+    background-color: #b3423b;
     color: white;
     margin-top:100px;
 }
@@ -553,10 +555,24 @@ footer span{
         width: 100%;
         height: 70px;
         text-align: center;
-        background-color: red;
+        background-color: #b3423b;
         color: white;
         margin-top:200px;
         margin-bottom: -170px;
+    }
+    #add-items{
+        width:30%;
+        height: 190px;
+        background-color:#FFF799;
+        position: absolute;
+        top: 0%;
+        bottom: 50%;
+        right: 60%;
+        left: 35%;
+        text-align: center;
+        color: #b3423b;
+        display: none;
+        
     }
 
                              
@@ -701,7 +717,7 @@ footer span{
         grid-area: header;
         width: 100%;
         height: 80px;
-        background-color: red;
+        background-color: #b3423b;
         margin: 20px auto;
         
     }
@@ -730,13 +746,27 @@ footer span{
         
     
     }
+    #add-items{
+        width:30%;
+        min-height: 250px;
+        background-color:#FFF799;
+        position: absolute;
+        top: 0%;
+        bottom: 50%;
+        right: 60%;
+        left: 35%;
+        text-align: center;
+        color: #b3423b;
+        display: none;
+        
+    }
 
     footer{
         grid-area: footer;
         width: 100%;
         height: 50px;
         text-align: center;
-        background-color: red;
+        background-color: #b3423b;
         color: white;
         margin-top:90px;
         margin-bottom: -700px;
